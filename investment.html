@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investments - FINORA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <style>
+        .page-banner {
+            padding: 160px 0 80px;
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #1e293b 100%);
+            color: white;
+            text-align: center;
+        }
+        .page-banner h1 {
+            color: white;
+            margin-bottom: 16px;
+        }
+        .page-banner p {
+            color: #94A3B8;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .investment-visual {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 40px;
+            box-shadow: var(--shadow-lg);
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+            border: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand"><img src="assets/logos.webp" alt="FINORA Logo" style="height: 36px; width: auto; object-fit: contain;"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="loans.html">Loans</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-login"><i class="fa-regular fa-user" style="margin-right: 6px;"></i> Login <i class="fa-solid fa-arrow-right" style="margin-left: 4px; font-size: 0.8rem;"></i></a>
+            </div>
+            <button class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container fade-in">
+            <h1>Investment Solutions</h1>
+            <p>Smart investing and long-term wealth creation strategies designed for your financial goals.</p>
+        </div>
+    </section>
+
+    <!-- Investment Overview (Portfolio Dashboard Visual) -->
+    <section class="section-light" style="padding-bottom:80px;">
+        <div class="container">
+            <div class="investment-visual grid grid-2 fade-in">
+                <div>
+                    <span class="badge">Portfolio Management</span>
+                    <h2 style="margin-bottom:16px;">Track Your Wealth</h2>
+                    <p class="text-muted" style="margin-bottom: 24px;">Our comprehensive investment dashboard helps you monitor asset allocation, track performance, and analyze risks in real-time.</p>
+                    <ul style="margin-bottom: 24px; color:var(--text-muted);">
+                        <li style="margin-bottom:12px;"><i class="fa-solid fa-check text-primary" style="margin-right:8px;"></i> Real-time Performance Monitoring</li>
+                        <li style="margin-bottom:12px;"><i class="fa-solid fa-check text-primary" style="margin-right:8px;"></i> Intelligent Asset Allocation</li>
+                        <li style="margin-bottom:12px;"><i class="fa-solid fa-check text-primary" style="margin-right:8px;"></i> Detailed Investment Reports</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="assets/investment.webp" alt="Investment Dashboard" style="border-radius:var(--border-radius-md); box-shadow:var(--shadow-md);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Options -->
+    <section class="section section-muted">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Explore Investment Options</h2>
+                <p class="text-muted">Diversify your portfolio with a wide range of investment vehicles tailored to your risk appetite.</p>
+            </div>
+            <div class="grid grid-3">
+                <div class="card fade-in">
+                    <div class="card-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                    <h3 class="card-title">Mutual Funds</h3>
+                    <p class="text-muted">Expertly managed funds that pool money to buy a diversified portfolio of stocks and bonds.</p>
+                </div>
+                <div class="card fade-in" style="transition-delay: 0.1s;">
+                    <div class="card-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                    <h3 class="card-title">Stocks</h3>
+                    <p class="text-muted">Invest directly in top-performing companies and build your own custom portfolio.</p>
+                </div>
+                <div class="card fade-in" style="transition-delay: 0.2s;">
+                    <div class="card-icon"><i class="fa-solid fa-file-contract"></i></div>
+                    <h3 class="card-title">Bonds</h3>
+                    <p class="text-muted">Secure, fixed-income investments offering steady returns over a specified period.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon"><i class="fa-solid fa-layer-group"></i></div>
+                    <h3 class="card-title">ETFs</h3>
+                    <p class="text-muted">Exchange-Traded Funds offering the diversification of mutual funds with stock-like trading.</p>
+                </div>
+                <div class="card fade-in" style="transition-delay: 0.1s;">
+                    <div class="card-icon"><i class="fa-solid fa-piggy-bank"></i></div>
+                    <h3 class="card-title">Fixed Deposits</h3>
+                    <p class="text-muted">Low-risk investments providing guaranteed returns and capital protection over time.</p>
+                </div>
+                <div class="card fade-in" style="transition-delay: 0.2s;">
+                    <div class="card-icon"><i class="fa-solid fa-umbrella-beach"></i></div>
+                    <h3 class="card-title">Retirement Funds</h3>
+                    <p class="text-muted">Long-term plans specifically designed to secure your financial independence post-retirement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Strategies -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Proven Investment Strategies</h2>
+                <p class="text-muted">Educational resources to help you make informed and strategic investment decisions.</p>
+            </div>
+            <div class="grid grid-3">
+                <div class="card fade-in">
+                    <h3 class="card-title">Long-Term Investing</h3>
+                    <p class="text-muted">Harness the power of compounding by staying invested for extended periods to ride out market volatility.</p>
+                </div>
+                <div class="card fade-in" style="transition-delay: 0.1s;">
+                    <h3 class="card-title">Diversification</h3>
+                    <p class="text-muted">Spread your investments across various asset classes to minimize risk and optimize potential returns.</p>
+                </div>
+                <div class="card fade-in" style="transition-delay: 0.2s;">
+                    <h3 class="card-title">Goal-Based Investing</h3>
+                    <p class="text-muted">Align your investment choices with specific life goals like buying a house or funding education.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment CTA -->
+    <section class="section" style="background-color: var(--primary-color); color: white; text-align: center;">
+        <div class="container fade-in">
+            <h2 style="color: white; margin-bottom: 24px;">Start Planning Your Investment Journey</h2>
+            <p style="margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto; opacity: 0.9;">Take the first step towards financial independence with FINORA's expert tools and resources.</p>
+            <a href="login.html" class="btn btn-secondary" style="background:white; color:var(--primary-color);">Explore Investment Options</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand"><img src="assets/logos.webp" alt="FINORA Logo" style="height: 36px; width: auto; object-fit: contain;"></div>
+                    <p class="footer-text">Empowering your financial journey with smart, secure, and accessible solutions for everyone.</p>
+                    <div style="display:flex; gap:16px;">
+                        <a href="#" style="color:#94A3B8; font-size:1.2rem;"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" style="color:#94A3B8; font-size:1.2rem;"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" style="color:#94A3B8; font-size:1.2rem;"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" style="color:#94A3B8; font-size:1.2rem;"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="investment.html">Investments</a></li>
+                        <li><a href="banking.html">Digital Banking</a></li>
+                        <li><a href="loans.html">Loans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="404.html">About Us</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="404.html">Financial Resources</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="404.html">Help Center</a></li>
+                        <li><a href="404.html">Privacy Policy</a></li>
+                        <li><a href="404.html">Terms & Conditions</a></li>
+                        <li><a href="404.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FINORA. All rights reserved.</p>
+                <p>Support: <a href="mailto:support@finora.com">support@finora.com</a> | +91 98765 43210</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>

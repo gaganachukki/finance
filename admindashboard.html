@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - FINORA</title>
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Base userdashboard styles + specific admin styles -->
+    <link rel="stylesheet" href="CSS/admindashboard.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <a href="index.html"><img src="assets/logos.webp" alt="FINORA"></a>
+        </div>
+        
+        <div class="sidebar-profile">
+            <div class="profile-avatar avatar-light-green">A</div>
+            <div class="profile-info">
+                <h4>Admin <i class="fa-solid fa-circle-check" style="color: var(--dash-primary); font-size: 0.8rem; margin-left: 4px;"></i></h4>
+                <p>admin@finora.com</p>
+                <span class="profile-badge">SUPER ADMIN</span>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <div class="nav-section-title">Main</div>
+                <ul>
+                    <li><a href="admindashboard.html" class="active"><i class="fa-solid fa-table-cells-large"></i> Dashboard</a></li>
+                    <li><a href="404.html"><i class="fa-solid fa-users"></i> Users</a></li>
+                    <li><a href="404.html"><i class="fa-solid fa-file-invoice-dollar"></i> Loans</a></li>
+                </ul>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">Resources</div>
+                <ul>
+                    <li><a href="404.html"><i class="fa-solid fa-book-open"></i> Document Library</a></li>
+                    <li><a href="404.html"><i class="fa-solid fa-chart-line"></i> Financial Reports</a></li>
+                </ul>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">System</div>
+                <ul>
+                    <li><a href="404.html"><i class="fa-solid fa-user-shield"></i> Admin Profile</a></li>
+                    <li><a href="404.html"><i class="fa-solid fa-sliders"></i> Platform Settings</a></li>
+                    <li style="margin-top: 16px;"><a href="login.html" class="logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Topbar -->
+        <header class="topbar">
+            <h2>Admin Dashboard</h2>
+            <div class="topbar-right">
+                <div class="notification-bell">
+                    <i class="fa-regular fa-bell"></i>
+                    <div class="notification-badge">12</div>
+                </div>
+                <div class="user-dropdown">
+                    <div class="small-avatar avatar-light-green" style="color: #065F46;">A</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Header Overview -->
+        <section class="admin-header">
+            <div class="admin-title">
+                <h1>Overview</h1>
+                <p>Welcome back, <span>Admin!</span> Here's what's happening today.</p>
+            </div>
+            <div class="admin-actions">
+                <div class="date-picker">
+                    20 Aug 2026 <i class="fa-regular fa-calendar"></i>
+                </div>
+                <button class="btn-export">
+                    <i class="fa-solid fa-download"></i> Export Report
+                </button>
+            </div>
+        </section>
+
+        <!-- 5-Column Stats Grid -->
+        <section class="admin-stats-grid">
+            <div class="admin-stat-card">
+                <div class="admin-stat-icon icon-purple">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <h3>Total Users</h3>
+                <h2>2,548</h2>
+                <div class="admin-stat-trend trend-up"><i class="fa-solid fa-arrow-up"></i> 12.5% vs last month</div>
+            </div>
+            
+            <div class="admin-stat-card">
+                <div class="admin-stat-icon icon-cyan">
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                </div>
+                <h3>Active Loans</h3>
+                <h2>1,842</h2>
+                <div class="admin-stat-trend trend-up"><i class="fa-solid fa-arrow-up"></i> 15.3% vs last month</div>
+            </div>
+            
+            <div class="admin-stat-card">
+                <div class="admin-stat-icon icon-yellow">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                </div>
+                <h3>Pending Approvals</h3>
+                <h2>28</h2>
+                <div class="admin-stat-trend trend-up"><i class="fa-solid fa-arrow-up"></i> 5.6% vs last month</div>
+            </div>
+
+            <div class="admin-stat-card">
+                <div class="admin-stat-icon icon-blue">
+                    <i class="fa-solid fa-wallet"></i>
+                </div>
+                <h3>Total Deposits</h3>
+                <h2>3,275</h2>
+                <div class="admin-stat-trend trend-up"><i class="fa-solid fa-arrow-up"></i> 18.7% vs last month</div>
+            </div>
+
+            <div class="admin-stat-card">
+                <div class="admin-stat-icon icon-pink">
+                    <i class="fa-solid fa-sack-dollar"></i>
+                </div>
+                <h3>Total Revenue</h3>
+                <h2>$24,580</h2>
+                <div class="admin-stat-trend trend-up"><i class="fa-solid fa-arrow-up"></i> 20.4% vs last month</div>
+            </div>
+        </section>
+
+        <!-- Charts Row -->
+        <section class="charts-grid">
+            <!-- Bar Chart (User Growth) -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3>User Growth</h3>
+                    <select class="chart-dropdown">
+                        <option>This Year</option>
+                        <option>Last Year</option>
+                    </select>
+                </div>
+                <div class="chart-container" style="height: 300px;">
+                    <canvas id="growthChart"></canvas>
+                </div>
+            </div>
+            
+            <!-- Doughnut Chart (Loan Statistics) -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3>Loan Statistics</h3>
+                    <a href="404.html" class="chart-link">View All</a>
+                </div>
+                <div class="chart-container" style="height: 200px;">
+                    <canvas id="loanDoughnut"></canvas>
+                </div>
+                <div class="chart-legend">
+                    <div class="legend-item">
+                        <div class="legend-label"><div class="legend-dot" style="background: #00A86B;"></div> Personal Loans</div>
+                        <div class="legend-value">45%</div>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-label"><div class="legend-dot" style="background: #8B5CF6;"></div> Home Loans</div>
+                        <div class="legend-value">28.6%</div>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-label"><div class="legend-dot" style="background: #F59E0B;"></div> Business Loans</div>
+                        <div class="legend-value">26.4%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chart.js for rendering graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        Chart.defaults.color = '#9CA3AF';
+        Chart.defaults.font.family = 'Inter';
+
+        // Bar Chart (User Growth)
+        const ctxGrowth = document.getElementById('growthChart').getContext('2d');
+        new Chart(ctxGrowth, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'New Users',
+                    data: [30, 45, 60, 50, 75, 70],
+                    backgroundColor: '#00A86B',
+                    borderRadius: 4,
+                    barThickness: 24
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        display: false,
+                        beginAtZero: true
+                    },
+                    x: {
+                        grid: { display: false, drawBorder: false }
+                    }
+                }
+            }
+        });
+
+        // Doughnut Chart (Loan Statistics)
+        const ctxLoan = document.getElementById('loanDoughnut').getContext('2d');
+        new Chart(ctxLoan, {
+            type: 'doughnut',
+            data: {
+                labels: ['Personal', 'Home', 'Business'],
+                datasets: [{
+                    data: [45, 28.6, 26.4],
+                    backgroundColor: ['#00A86B', '#8B5CF6', '#F59E0B'],
+                    borderWidth: 0,
+                    cutout: '70%'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

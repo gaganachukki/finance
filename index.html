@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINORA - Build a Smarter Financial Future</title>
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/index.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="active" class="nav-brand"><img src="assets/logos.webp" alt="FINORA Logo" style="height: 36px; width: auto; object-fit: contain;"></a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="loans.html">Loans</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-login"><i class="fa-regular fa-user" style="margin-right: 6px;"></i> Login <i class="fa-solid fa-arrow-right" style="margin-left: 4px; font-size: 0.8rem;"></i></a>
+            </div>
+            <button class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero section-light">
+        <div class="container hero-grid">
+            <div class="hero-content fade-in">
+                <span class="badge">Your Financial Growth Partner</span>
+                <h1>Build a Brighter<br><span class="text-primary">Financial</span> Future</h1>
+                <p>Smart financial solutions for a better tomorrow. Manage your money, get the right loans, and achieve your goals with FINORA.</p>
+                <div class="hero-actions">
+                    <a href="login.html" class="btn btn-login">Get Started Today <i class="fa-solid fa-arrow-right" style="margin-left: 6px; font-size: 0.8rem;"></i></a>
+                    <a href="#" class="btn btn-watch"><i class="fa-regular fa-circle-play"></i> Watch Video</a>
+                </div>
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <div class="icon-circle"><i class="fa-solid fa-shield-check"></i></div>
+                        <div>
+                            <strong>Secure & Trusted</strong>
+                            <span>Your data is safe</span>
+                        </div>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="icon-circle"><i class="fa-solid fa-users"></i></div>
+                        <div>
+                            <strong>100K+ Customers</strong>
+                            <span>Growing together</span>
+                        </div>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="icon-circle"><i class="fa-solid fa-chart-column"></i></div>
+                        <div>
+                            <strong>Better Returns</strong>
+                            <span>Plan for tomorrow</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image fade-in">
+                <img src="assets/hero.webp" alt="Smart Financial Future" class="main-img">
+                
+                <div class="handwritten hero-hw">Small<br>Steps<br>Big<br>Goals</div>
+
+                <div class="floating-card top-left">
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">Total Savings</div>
+                    <div style="font-size: 1.25rem; font-weight: 700; color: var(--secondary-color);">₹2,45,000</div>
+                    <div class="growth-indicator"><i class="fa-solid fa-arrow-trend-up"></i> 12% this month</div>
+                    <div class="chart-icon"><i class="fa-solid fa-arrow-trend-up" style="color: #10B981; font-size: 2rem;"></i></div>
+                </div>
+                
+                <div class="floating-card middle-left">
+                    <div class="icon-bg-yellow"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                    <div>
+                        <div style="font-size: 0.75rem; color: var(--text-muted);">Loan Eligible</div>
+                        <div style="font-size: 1.1rem; font-weight: 700; color: var(--secondary-color);">₹5,00,000</div>
+                        <div style="font-size: 0.7rem; color: var(--text-muted);">Quick Approval</div>
+                    </div>
+                </div>
+
+                <div class="floating-card bottom-right">
+                    <div>
+                        <div style="font-size: 0.75rem; color: var(--text-muted);">Investment Growth</div>
+                        <div style="display:flex; align-items:flex-end; gap:8px; margin-top:8px;">
+                            <div class="bars">
+                                <div class="bar" style="height: 15px;"></div>
+                                <div class="bar" style="height: 25px;"></div>
+                                <div class="bar" style="height: 35px;"></div>
+                                <div class="bar" style="height: 20px;"></div>
+                            </div>
+                            <div>
+                                <div style="color: #10B981; font-weight: 700; font-size: 1.2rem;">+28%</div>
+                                <div style="font-size: 0.65rem; color: var(--text-muted); line-height:1.2;">Last 6 months<br>returns</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Row -->
+    <section class="services-row section-light">
+        <div class="container fade-in">
+            <div class="services-wrapper">
+                <div class="service-item">
+                    <div class="service-icon"><i class="fa-solid fa-magnifying-glass-dollar"></i></div>
+                    <h4>Personal Loans</h4>
+                    <p>For your dreams</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon"><i class="fa-solid fa-house"></i></div>
+                    <h4>Home Loans</h4>
+                    <p>Build your future</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon"><i class="fa-regular fa-credit-card"></i></div>
+                    <h4>Business Loans</h4>
+                    <p>Grow your business</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h4>Investment Planning</h4>
+                    <p>Wealth for tomorrow</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h4>Financial Advisory</h4>
+                    <p>Expert guidance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section section-light">
+        <div class="container grid-2" style="align-items: center;">
+            <div class="fade-in">
+                <span class="badge" style="text-transform: uppercase;">About FINORA</span>
+                <h2>More Than Finance,<br>A Better Tomorrow</h2>
+                <p class="text-muted" style="margin-bottom: 24px;">At FINORA, we believe everyone deserves financial freedom. We provide simple, transparent, and reliable financial solutions to help you achieve your personal and professional goals.</p>
+                <a href="404.html" class="btn btn-primary" style="margin-bottom: 40px;">Learn More About Us <i class="fa-solid fa-arrow-right" style="margin-left: 6px; font-size: 0.8rem;"></i></a>
+                
+                <div class="about-stats">
+                    <div>
+                        <div class="stat-number">100K+</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                    <div>
+                        <div class="stat-number">₹500Cr+</div>
+                        <div class="stat-label">Loans Disbursed</div>
+                    </div>
+                    <div>
+                        <div class="stat-number">4.8/5</div>
+                        <div class="stat-label">Customer Rating</div>
+                    </div>
+                </div>
+            </div>
+            <div class="fade-in about-image-wrapper">
+                <img src="assets/investment.webp" alt="Office Building" class="about-img">
+                <div class="glass-card">
+                    <h3>"Empowering<br>your financial<br>journey"</h3>
+                    <div class="green-line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Smart Tools Section -->
+    <section class="tools-section section-light">
+        <div class="bg-circle"></div>
+        <div class="container grid-2" style="align-items: center;">
+            <div class="fade-in" style="position:relative;">
+                <img src="assets/finance-dashboard.webp" alt="Mobile App" class="app-mockup">
+            </div>
+            <div class="fade-in" style="position:relative; z-index:2; padding-left:40px;">
+                <span class="badge" style="text-transform: uppercase; background: #F1F5F9; color: var(--text-muted);">Why Choose FINORA</span>
+                <h2>Smart Tools for<br>Smarter Decisions</h2>
+                <p class="text-muted" style="margin-bottom: 24px;">Track expenses, manage loans, grow investments and stay in control — all in one place.</p>
+                
+                <ul class="feature-list-checks">
+                    <li><i class="fa-solid fa-circle-check"></i> Easy Loan Applications</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Smart Investment Options</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Real-time Expense Tracking</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Personalized Financial Insights</li>
+                </ul>
+                
+                <a href="404.html" class="btn btn-login" style="margin-top: 24px;">Explore Our Services <i class="fa-solid fa-arrow-right" style="margin-left: 6px; font-size: 0.8rem;"></i></a>
+
+                <div class="handwritten tools-hw">Plan<br>Save<br>Invest<br>Grow</div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- ... (Same footer as before) ... -->
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand"><img src="assets/logos.webp" alt="FINORA Logo" style="height: 36px; width: auto; object-fit: contain;"></div>
+                    <p class="footer-text">Empowering your financial journey with smart, secure, and accessible solutions for everyone.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="investment.html">Investments</a></li>
+                        <li><a href="banking.html">Digital Banking</a></li>
+                        <li><a href="loans.html">Loans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="404.html">About Us</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="404.html">Financial Resources</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="404.html">Help Center</a></li>
+                        <li><a href="404.html">Privacy Policy</a></li>
+                        <li><a href="404.html">Terms & Conditions</a></li>
+                        <li><a href="404.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FINORA. All rights reserved.</p>
+                <p>Support: <a href="mailto:support@finora.com">support@finora.com</a> | +91 98765 43210</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>

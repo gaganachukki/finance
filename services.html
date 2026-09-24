@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - FINORA</title>
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/services.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand"><img src="assets/logos.webp" alt="FINORA Logo" style="height: 36px; width: auto; object-fit: contain;"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="loans.html">Loans</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-login"><i class="fa-regular fa-user" style="margin-right: 6px;"></i> Login <i class="fa-solid fa-arrow-right" style="margin-left: 4px; font-size: 0.8rem;"></i></a>
+            </div>
+            <button class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 1. Simple Hero Section -->
+    <section class="services-hero">
+        <div class="container">
+            <h1>Comprehensive <span class="text-primary">Financial Ecosystem</span></h1>
+            <p>From individual wealth management to powerful corporate solutions, explore how FINORA bridges the gap between your ambition and execution.</p>
+        </div>
+    </section>
+
+    <!-- 2. Wealth Advisory -->
+    <section class="wealth-section">
+        <div class="container wealth-grid">
+            <div class="wealth-content">
+                <span class="badge">For Individuals</span>
+                <h2>Private Wealth Advisory</h2>
+                <p class="text-muted">Achieve your long-term goals with personalized financial planning, tax optimization, and estate management strategies curated by industry experts.</p>
+                <div class="wealth-list">
+                    <div class="wealth-list-item">
+                        <div class="icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                        <div>
+                            <h4>Tax Optimization</h4>
+                            <p class="text-muted" style="font-size: 0.9rem;">Legally minimize your tax liabilities with smart structuring.</p>
+                        </div>
+                    </div>
+                    <div class="wealth-list-item">
+                        <div class="icon"><i class="fa-solid fa-file-signature"></i></div>
+                        <div>
+                            <h4>Estate Planning</h4>
+                            <p class="text-muted" style="font-size: 0.9rem;">Ensure seamless asset transition for future generations.</p>
+                        </div>
+                    </div>
+                    <div class="wealth-list-item">
+                        <div class="icon"><i class="fa-solid fa-bullseye"></i></div>
+                        <div>
+                            <h4>Goal-Based Blueprints</h4>
+                            <p class="text-muted" style="font-size: 0.9rem;">Custom roadmaps for retirement, education, and major purchases.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wealth-image">
+                <img src="assets/investment.webp" alt="Wealth Advisory" style="border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); width: 100%;">
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Corporate Solutions -->
+    <section class="corporate-section">
+        <div class="container">
+            <div class="corporate-header fade-in">
+                <span class="badge" style="background: rgba(255,255,255,0.1); color: white;">For Businesses</span>
+                <h2>Corporate Financial Solutions</h2>
+                <p style="color: #94A3B8; max-width: 600px; margin: 0 auto;">Streamline your company's finances, automate payroll, and scale your operations globally with FINORA Business.</p>
+            </div>
+            <div class="corporate-grid">
+                <div class="corp-card">
+                    <i class="fa-solid fa-money-check-dollar"></i>
+                    <h3>Automated Payroll</h3>
+                    <p style="color: #94A3B8; font-size: 0.95rem;">Process salaries globally with one click, integrated compliance, and zero hidden fees.</p>
+                </div>
+                <div class="corp-card">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <h3>Corporate Cards</h3>
+                    <p style="color: #94A3B8; font-size: 0.95rem;">Issue physical and virtual expense cards to employees with dynamic spending limits.</p>
+                </div>
+                <div class="corp-card">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <h3>Treasury Management</h3>
+                    <p style="color: #94A3B8; font-size: 0.95rem;">Optimize working capital, manage liquidity, and mitigate foreign exchange risks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Digital Wallet & Payments -->
+    <section class="wallet-section">
+        <div class="container wallet-grid">
+            <div class="wallet-image-container wallet-image">
+                <img src="assets/banking.webp" alt="Digital Wallet" style="border-radius: 24px; width: 100%;">
+                <div class="wallet-card-overlay">
+                    <div style="background: var(--bg-badge); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-size: 1.5rem;">
+                        <i class="fa-solid fa-wifi"></i>
+                    </div>
+                    <div>
+                        <h4 style="margin:0;">Tap to Pay</h4>
+                        <p class="text-muted" style="font-size: 0.85rem; margin:0;">Enabled worldwide</p>
+                    </div>
+                </div>
+            </div>
+            <div class="wallet-content">
+                <span class="badge">Everyday Finance</span>
+                <h2>Next-Gen Digital Wallet</h2>
+                <p class="text-muted" style="margin-bottom: 24px;">Transform your smartphone into your ultimate financial companion. Pay merchants, split bills, and manage subscriptions instantly.</p>
+                <p class="text-muted" style="margin-bottom: 24px;">Enjoy zero-markup FX rates while traveling and get real-time push notifications for every transaction, keeping you firmly in control.</p>
+                <a href="login.html" class="btn btn-login">Open Wallet <i class="fa-solid fa-arrow-right" style="margin-left: 6px; font-size: 0.8rem;"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Insurance & Protection -->
+    <section class="insurance-section">
+        <div class="container">
+            <div class="insurance-header">
+                <h2>Insurance & Protection</h2>
+                <p class="text-muted">Safeguard what matters most. Tailored policies embedded directly into your FINORA dashboard.</p>
+            </div>
+            <div class="insurance-flex">
+                <div class="insurance-pill"><i class="fa-solid fa-heart-pulse"></i> Comprehensive Health</div>
+                <div class="insurance-pill"><i class="fa-solid fa-house-chimney"></i> Property & Asset</div>
+                <div class="insurance-pill"><i class="fa-solid fa-plane-departure"></i> Global Travel</div>
+                <div class="insurance-pill"><i class="fa-solid fa-car"></i> Auto Coverage</div>
+                <div class="insurance-pill"><i class="fa-solid fa-user-shield"></i> Life Insurance</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Service Process -->
+    <section class="process-section">
+        <div class="container">
+            <div class="process-header">
+                <h2>How We Deliver Value</h2>
+                <p class="text-muted">Our streamlined onboarding and execution process.</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-circle">1</div>
+                    <h4>Discovery</h4>
+                    <p class="text-muted" style="font-size: 0.9rem;">We analyze your current financial health and future goals.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-circle">2</div>
+                    <h4>Strategy</h4>
+                    <p class="text-muted" style="font-size: 0.9rem;">Our experts craft a bespoke financial roadmap tailored to you.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-circle">3</div>
+                    <h4>Execution</h4>
+                    <p class="text-muted" style="font-size: 0.9rem;">Seamless deployment of assets, policies, and accounts.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-circle">4</div>
+                    <h4>Review</h4>
+                    <p class="text-muted" style="font-size: 0.9rem;">Continuous monitoring and quarterly rebalancing of your portfolio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <!-- ... (Same footer as before) ... -->
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand"><img src="assets/logos.webp" alt="FINORA Logo" style="height: 36px; width: auto; object-fit: contain;"></div>
+                    <p class="footer-text">Empowering your financial journey with smart, secure, and accessible solutions for everyone.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="investment.html">Investments</a></li>
+                        <li><a href="banking.html">Digital Banking</a></li>
+                        <li><a href="loans.html">Loans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="404.html">About Us</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="404.html">Financial Resources</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="404.html">Help Center</a></li>
+                        <li><a href="404.html">Privacy Policy</a></li>
+                        <li><a href="404.html">Terms & Conditions</a></li>
+                        <li><a href="404.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FINORA. All rights reserved.</p>
+                <p>Support: <a href="mailto:support@finora.com">support@finora.com</a> | +91 98765 43210</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP Libraries for Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script src="JS/script.js"></script>
+    <script src="JS/services-animations.js"></script>
+</body>
+</html>

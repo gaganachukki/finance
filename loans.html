@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexible Loans - FINORA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <style>
+        .page-banner {
+            padding: 160px 0 80px;
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #1e293b 100%);
+            color: white;
+            text-align: center;
+        }
+        .page-banner h1 { color: white; margin-bottom: 16px; }
+        .page-banner p { color: #94A3B8; font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
+        
+        .calculator-container {
+            background: white;
+            padding: 40px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+        }
+        
+        .calc-input-group {
+            margin-bottom: 24px;
+        }
+        
+        .calc-input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .calc-input-group input[type="range"] {
+            width: 100%;
+            margin-bottom: 12px;
+        }
+        
+        .calc-input-group input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .calc-results {
+            background: var(--background-muted);
+            padding: 32px;
+            border-radius: var(--border-radius-md);
+            height: 100%;
+        }
+
+        .result-item {
+            margin-bottom: 24px;
+        }
+
+        .result-item h4 {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .result-item .amount {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .result-item.highlight .amount {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand"><img src="assets/logos.webp" alt="FINORA Logo" style="height: 36px; width: auto; object-fit: contain;"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="loans.html" class="active">Loans</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-login"><i class="fa-regular fa-user" style="margin-right: 6px;"></i> Login <i class="fa-solid fa-arrow-right" style="margin-left: 4px; font-size: 0.8rem;"></i></a>
+            </div>
+            <button class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="page-banner">
+        <div class="container fade-in">
+            <h1>Flexible Loan Solutions</h1>
+            <p>Empower your dreams with our low-interest, hassle-free financing options.</p>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="section section-light">
+        <div class="container grid-2" style="align-items: center;">
+            <div class="fade-in">
+                <span class="badge">Loan Overview</span>
+                <h2>Borrow Responsibly. Grow Confidently.</h2>
+                <p class="text-muted" style="margin-bottom: 24px;">Whether you're buying a home, expanding your business, or handling an emergency, FINORA offers competitive rates and flexible repayment options.</p>
+                <a href="#calculator" class="btn btn-primary">Calculate Your EMI</a>
+            </div>
+            <div class="fade-in">
+                <img src="assets/loans.webp" alt="Loan Services" style="border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);">
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="section section-muted">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Our Loan Products</h2>
+                <p class="text-muted">Tailored financing options for every stage of life.</p>
+            </div>
+            <div class="grid grid-3">
+                <div class="card fade-in">
+                    <div class="card-icon"><i class="fa-solid fa-user"></i></div>
+                    <h3 class="card-title">Personal Loans</h3>
+                    <p class="text-muted">Quick approval for personal expenses, travel, or medical emergencies without collateral.</p>
+                </div>
+                <div class="card fade-in" style="transition-delay:0.1s">
+                    <div class="card-icon"><i class="fa-solid fa-house"></i></div>
+                    <h3 class="card-title">Home Loans</h3>
+                    <p class="text-muted">Fulfill your dream of owning a home with long-tenure, low-interest mortgage options.</p>
+                </div>
+                <div class="card fade-in" style="transition-delay:0.2s">
+                    <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3 class="card-title">Education Loans</h3>
+                    <p class="text-muted">Invest in your future with special student financing for domestic and international studies.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon"><i class="fa-solid fa-car"></i></div>
+                    <h3 class="card-title">Vehicle Loans</h3>
+                    <p class="text-muted">Drive home your dream car or two-wheeler with up to 100% on-road funding.</p>
+                </div>
+                <div class="card fade-in" style="transition-delay:0.1s">
+                    <div class="card-icon"><i class="fa-solid fa-store"></i></div>
+                    <h3 class="card-title">Business Loans</h3>
+                    <p class="text-muted">Scale your operations, manage working capital, or purchase new equipment easily.</p>
+                </div>
+                <div class="card fade-in" style="transition-delay:0.2s">
+                    <div class="card-icon"><i class="fa-solid fa-truck-medical"></i></div>
+                    <h3 class="card-title">Emergency Credit</h3>
+                    <p class="text-muted">Instant micro-loans designed to help you cover unexpected short-term financial gaps.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EMI Calculator -->
+    <section id="calculator" class="section section-light">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>EMI Calculator</h2>
+                <p class="text-muted">Plan your repayment schedule before you apply.</p>
+            </div>
+            <div class="calculator-container grid grid-2 fade-in">
+                <div>
+                    <div class="calc-input-group">
+                        <label>Loan Amount (₹)</label>
+                        <input type="range" id="loanAmountSlider" min="10000" max="10000000" step="10000" value="500000">
+                        <input type="number" id="loanAmount" value="500000">
+                    </div>
+                    <div class="calc-input-group">
+                        <label>Interest Rate (% p.a.)</label>
+                        <input type="range" id="interestRateSlider" min="5" max="25" step="0.5" value="10.5">
+                        <input type="number" id="interestRate" value="10.5" step="0.1">
+                    </div>
+                    <div class="calc-input-group">
+                        <label>Loan Tenure (Years)</label>
+                        <input type="range" id="loanTenureSlider" min="1" max="30" step="1" value="5">
+                        <input type="number" id="loanTenure" value="5">
+                    </div>
+                </div>
+                <div class="calc-results">
+                    <div class="result-item highlight">
+                        <h4>Monthly EMI</h4>
+                        <div class="amount" id="emiResult">₹0</div>
+                    </div>
+                    <div class="result-item">
+                        <h4>Total Interest Payable</h4>
+                        <div class="amount" id="totalInterestResult">₹0</div>
+                    </div>
+                    <div class="result-item">
+                        <h4>Total Amount Payable</h4>
+                        <div class="amount" id="totalAmountResult">₹0</div>
+                    </div>
+                    <a href="login.html" class="btn btn-primary" style="width:100%; text-align:center; margin-top:16px;">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section section-muted">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Simple 4-Step Process</h2>
+            </div>
+            <div class="grid grid-4 text-center">
+                <div class="fade-in">
+                    <div class="card-icon" style="margin: 0 auto 16px;"><i class="fa-solid fa-file-signature"></i></div>
+                    <h4>01 - Apply</h4>
+                    <p class="text-muted">Fill out a simple online application form.</p>
+                </div>
+                <div class="fade-in" style="transition-delay:0.1s">
+                    <div class="card-icon" style="margin: 0 auto 16px;"><i class="fa-solid fa-id-card-clip"></i></div>
+                    <h4>02 - Verification</h4>
+                    <p class="text-muted">Instant digital KYC and credit assessment.</p>
+                </div>
+                <div class="fade-in" style="transition-delay:0.2s">
+                    <div class="card-icon" style="margin: 0 auto 16px;"><i class="fa-solid fa-thumbs-up"></i></div>
+                    <h4>03 - Approval</h4>
+                    <p class="text-muted">Get provisional approval within minutes.</p>
+                </div>
+                <div class="fade-in" style="transition-delay:0.3s">
+                    <div class="card-icon" style="margin: 0 auto 16px;"><i class="fa-solid fa-money-bill-wave"></i></div>
+                    <h4>04 - Disbursement</h4>
+                    <p class="text-muted">Funds transferred directly to your bank.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="background-color: var(--primary-color); color: white; text-align: center;">
+        <div class="container fade-in">
+            <h2 style="color: white; margin-bottom: 24px;">Find the Right Financing Option</h2>
+            <a href="#calculator" class="btn btn-secondary" style="background:white; color:var(--primary-color);">Calculate Your EMI</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand"><img src="assets/logos.webp" alt="FINORA Logo" style="height: 36px; width: auto; object-fit: contain;"></div>
+                    <p class="footer-text">Empowering your financial journey with smart, secure, and accessible solutions for everyone.</p>
+                    <div style="display:flex; gap:16px;">
+                        <a href="#" style="color:#94A3B8; font-size:1.2rem;"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" style="color:#94A3B8; font-size:1.2rem;"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" style="color:#94A3B8; font-size:1.2rem;"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" style="color:#94A3B8; font-size:1.2rem;"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="investment.html">Investments</a></li>
+                        <li><a href="banking.html">Digital Banking</a></li>
+                        <li><a href="loans.html">Loans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="404.html">About Us</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="404.html">Financial Resources</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="404.html">Help Center</a></li>
+                        <li><a href="404.html">Privacy Policy</a></li>
+                        <li><a href="404.html">Terms & Conditions</a></li>
+                        <li><a href="404.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FINORA. All rights reserved.</p>
+                <p>Support: <a href="mailto:support@finora.com">support@finora.com</a> | +91 98765 43210</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="JS/script.js"></script>
+    <script src="JS/calculator.js"></script>
+</body>
+</html>
