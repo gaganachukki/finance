@@ -364,3 +364,70 @@ body {
     .main-content { margin-left: 0; padding: 16px; }
     .stats-grid { grid-template-columns: 1fr; }
 }
+
+/* ---------- DASHBOARD BUTTON SYSTEM ---------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px !important;
+    border-radius: 8px !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    font-family: 'Inter', sans-serif;
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+
+/* Primary Solid Button (Action / Invest / Export) */
+.btn-export, .btn-primary, button[style*="background: var(--dash-primary)"] {
+    background: var(--dash-primary) !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2) !important;
+    border: none !important;
+}
+.btn-export:hover, .btn-primary:hover {
+    background: #059669 !important; /* darker emerald */
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3) !important;
+}
+
+/* Outline / Secondary Button */
+button[style*="background: transparent"][style*="border: 1px solid var(--dash-border)"],
+button[style*="background: transparent"][style*="border: 1px dashed"],
+.btn-outline,
+.btn[style*="background: transparent"] {
+    background: rgba(255,255,255,0.02) !important;
+    color: #E2E8F0 !important;
+    border: 1px solid rgba(255,255,255,0.15) !important;
+    box-shadow: none !important;
+}
+button[style*="background: transparent"]:hover,
+.btn-outline:hover {
+    background: rgba(255,255,255,0.08) !important;
+    border-color: rgba(255,255,255,0.3) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Danger Button */
+button[style*="background: #EF4444"], button[style*="color: #EF4444"] {
+    background: rgba(239, 68, 68, 0.1) !important;
+    color: #EF4444 !important;
+    border: 1px solid rgba(239, 68, 68, 0.2) !important;
+}
+button[style*="background: #EF4444"]:hover, button[style*="color: #EF4444"]:hover {
+    background: #EF4444 !important;
+    color: white !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.2) !important;
+}
+
+/* Fix table buttons so they are smaller */
+table .btn, table button {
+    padding: 6px 12px !important;
+    font-size: 0.85rem !important;
+}

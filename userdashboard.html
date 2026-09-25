@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/userdashboard.css">
+    <link rel="stylesheet" href="CSS/dashboard-responsive.css">
 </head>
 <body>
 
@@ -18,10 +19,10 @@
         </div>
         
         <div class="sidebar-profile">
-            <div class="profile-avatar">S</div>
+            <div class="profile-avatar dyn-initial">S</div>
             <div class="profile-info">
-                <h4>Srinivas Kumar</h4>
-                <p>srinivas@gmail.com</p>
+                <h4 class="dyn-name">Srinivas Kumar</h4>
+                <p class="dyn-email">srinivas@gmail.com</p>
                 <span class="profile-badge">USER PANEL</span>
             </div>
         </div>
@@ -30,23 +31,23 @@
             <div class="nav-section">
                 <div class="nav-section-title">Main</div>
                 <ul>
-                    <li><a href="userdashboard.html" class="active">Dashboard</a></li>
-                    <li><a href="404.html">My Investments</a></li>
-                    <li><a href="404.html">Loan Status</a></li>
+                    <li><a href="404.html" class="nav-link active" data-target="dashboard">Dashboard</a></li>
+                    <li><a href="404.html" class="nav-link" data-target="investments">My Investments</a></li>
+                    <li><a href="404.html" class="nav-link" data-target="loans">Loan Status</a></li>
                 </ul>
             </div>
             <div class="nav-section">
                 <div class="nav-section-title">Resources</div>
                 <ul>
-                    <li><a href="404.html">Transaction History</a></li>
-                    <li><a href="404.html">Tax Reports</a></li>
+                    <li><a href="404.html" class="nav-link" data-target="transactions">Transaction History</a></li>
+                    <li><a href="404.html" class="nav-link" data-target="tax">Tax Reports</a></li>
                 </ul>
             </div>
             <div class="nav-section">
                 <div class="nav-section-title">System</div>
                 <ul>
-                    <li><a href="404.html">Profile</a></li>
-                    <li><a href="404.html">Settings</a></li>
+                    <li><a href="404.html" class="nav-link" data-target="profile">Profile</a></li>
+                    <li><a href="404.html" class="nav-link" data-target="settings">Settings</a></li>
                     <li style="margin-top: 16px;"><a href="login.html" class="logout">Logout</a></li>
                 </ul>
             </div>
@@ -61,19 +62,20 @@
             <div class="topbar-right">
                 <div style="width: 8px; height: 8px; background: #EF4444; border-radius: 50%; margin-right: 8px;"></div>
                 <div class="user-dropdown">
-                    <div class="small-avatar">S</div>
-                    <span style="font-size: 0.9rem; font-weight: 500;">Srinivas Kumar</span>
+                    <div class="small-avatar dyn-initial">S</div>
+                    <span class="dyn-name" style="font-size: 0.9rem; font-weight: 500;">Srinivas Kumar</span>
                 </div>
             </div>
         </header>
 
-        <!-- Hero Section -->
+        <div id="dashboard" class="dashboard-view active">
+<!-- Hero Section -->
         <section class="dash-hero">
             <img src="assets/investment.webp" alt="Background" class="dash-hero-bg">
             <div class="dash-hero-overlay"></div>
             <div class="dash-hero-content">
                 <div class="dash-hero-text">
-                    <h1>Welcome back,<br><span>Srinivas!</span></h1>
+                    <h1>Welcome back,<br><span class="dyn-first-name">Srinivas!</span></h1>
                     <p>You're one step closer to your financial goals today.</p>
                     <p class="dash-quote">"Wealth consists not in having great possessions, but in having few wants."</p>
                 </div>
@@ -161,10 +163,313 @@
                 </div>
             </div>
         </section>
-    </main>
+</div>
 
-    <!-- Chart.js for rendering graphs -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        
+        <!-- Investments View -->
+        <div id="investments" class="dashboard-view" style="display: none;">
+            <h2 style="margin-bottom: 24px;">My Investments</h2>
+            <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 24px;">
+                <div class="stat-card"><h3>Portfolio Value</h3><h2 style="color: var(--dash-primary);">₹12,45,000</h2><p class="stat-trend trend-up">+14.2% Overall</p></div>
+                <div class="stat-card"><h3>Day's Gain</h3><h2 style="color: var(--dash-primary);">+₹8,450</h2><p class="stat-trend trend-up">+0.68% Today</p></div>
+                <div class="stat-card"><h3>Invested Amount</h3><h2>₹10,20,000</h2><p class="text-muted">Across 12 assets</p></div>
+            </div>
+            
+            <div class="chart-card" style="margin-bottom: 24px;">
+                <h3 style="margin-bottom: 16px;">Active Holdings</h3>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; text-align: left; border-collapse: collapse; min-width: 600px;">
+                        <tr style="border-bottom: 1px solid var(--dash-border);"><th style="padding: 12px 0;">Asset</th><th style="padding: 12px 0;">Shares</th><th style="padding: 12px 0;">Avg Price</th><th style="padding: 12px 0;">LTP</th><th style="padding: 12px 0;">Current Value</th><th style="padding: 12px 0;">Return</th></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">Reliance Ind.</td><td>50</td><td>₹2,500</td><td>₹2,900</td><td>₹1,45,000</td><td class="trend-up">+16%</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">HDFC Bank</td><td>120</td><td>₹1,500</td><td>₹1,750</td><td>₹2,10,000</td><td class="trend-up">+16.6%</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">TCS</td><td>25</td><td>₹4,000</td><td>₹3,920</td><td>₹98,000</td><td class="trend-down">-2%</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">Infosys</td><td>100</td><td>₹1,400</td><td>₹1,650</td><td>₹1,65,000</td><td class="trend-up">+17.8%</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">ITC Ltd</td><td>500</td><td>₹380</td><td>₹450</td><td>₹2,25,000</td><td class="trend-up">+18.4%</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">L&T</td><td>40</td><td>₹2,800</td><td>₹3,400</td><td>₹1,36,000</td><td class="trend-up">+21.4%</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">Axis Bank</td><td>80</td><td>₹950</td><td>₹1,050</td><td>₹84,000</td><td class="trend-up">+10.5%</td></tr>
+                        <tr><td style="padding: 12px 0;">Tata Motors</td><td>150</td><td>₹600</td><td>₹950</td><td>₹1,42,500</td><td class="trend-up">+58.3%</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <h3 style="margin-bottom: 16px; margin-top: 32px;">Recommended Mutual Funds</h3>
+            <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 40px;">
+                <div class="stat-card" style="border-top: 4px solid #10B981;">
+                    <h4 style="margin-bottom: 8px; color: var(--dash-text);">Parag Parikh Flexi Cap</h4>
+                    <p class="text-muted" style="font-size: 0.85rem; margin-bottom: 16px;">Equity - Flexi Cap</p>
+                    <h2 style="font-size: 1.5rem; margin-bottom: 8px;">24.5%</h2>
+                    <p class="stat-trend trend-up">3Y Annualised</p>
+                    <button onclick="window.location.href='404.html'" class="btn btn-export" style="width: 100%; margin-top: 16px;">Invest Now</button>
+                </div>
+                <div class="stat-card" style="border-top: 4px solid #3B82F6;">
+                    <h4 style="margin-bottom: 8px; color: var(--dash-text);">Quant Small Cap Fund</h4>
+                    <p class="text-muted" style="font-size: 0.85rem; margin-bottom: 16px;">Equity - Small Cap</p>
+                    <h2 style="font-size: 1.5rem; margin-bottom: 8px;">38.2%</h2>
+                    <p class="stat-trend trend-up">3Y Annualised</p>
+                    <button onclick="window.location.href='404.html'" class="btn btn-export" style="width: 100%; margin-top: 16px;">Invest Now</button>
+                </div>
+                <div class="stat-card" style="border-top: 4px solid #8B5CF6;">
+                    <h4 style="margin-bottom: 8px; color: var(--dash-text);">HDFC Index Nifty 50</h4>
+                    <p class="text-muted" style="font-size: 0.85rem; margin-bottom: 16px;">Equity - Index</p>
+                    <h2 style="font-size: 1.5rem; margin-bottom: 8px;">15.4%</h2>
+                    <p class="stat-trend trend-up">3Y Annualised</p>
+                    <button onclick="window.location.href='404.html'" class="btn btn-export" style="width: 100%; margin-top: 16px;">Invest Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loans View -->
+        <div id="loans" class="dashboard-view" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                <h2>Loan Status</h2>
+                <button onclick="window.location.href='404.html'" class="btn btn-export">Apply for New Loan</button>
+            </div>
+            
+            <div class="stats-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 24px;">
+                <div class="stat-card" style="position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 0; right: 0; padding: 8px 16px; background: rgba(16, 185, 129, 0.1); color: #10B981; border-bottom-left-radius: 12px; font-weight: 600; font-size: 0.8rem;">Active</div>
+                    <h3 style="margin-bottom: 8px;">Home Loan (HL-4829)</h3>
+                    <h2 style="margin-bottom: 16px;">₹45,00,000 <span style="font-size: 1rem; color: var(--dash-muted); font-weight: 400;">/ ₹60,00,000</span></h2>
+                    <div style="width: 100%; height: 6px; background: var(--dash-border); border-radius: 3px; margin-bottom: 16px;"><div style="width: 25%; height: 100%; background: var(--dash-primary); border-radius: 3px;"></div></div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                        <span class="text-muted">Next EMI: 5th Oct</span>
+                        <strong>₹42,500</strong>
+                    </div>
+                </div>
+                <div class="stat-card" style="position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 0; right: 0; padding: 8px 16px; background: rgba(16, 185, 129, 0.1); color: #10B981; border-bottom-left-radius: 12px; font-weight: 600; font-size: 0.8rem;">Active</div>
+                    <h3 style="margin-bottom: 8px;">Car Loan (CL-1920)</h3>
+                    <h2 style="margin-bottom: 16px;">₹8,50,000 <span style="font-size: 1rem; color: var(--dash-muted); font-weight: 400;">/ ₹12,00,000</span></h2>
+                    <div style="width: 100%; height: 6px; background: var(--dash-border); border-radius: 3px; margin-bottom: 16px;"><div style="width: 30%; height: 100%; background: var(--dash-primary); border-radius: 3px;"></div></div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                        <span class="text-muted">Next EMI: 12th Oct</span>
+                        <strong>₹15,200</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-card" style="margin-bottom: 32px;">
+                <h3 style="margin-bottom: 16px;">Upcoming EMI Schedule</h3>
+                <table style="width: 100%; text-align: left; border-collapse: collapse;">
+                    <tr style="border-bottom: 1px solid var(--dash-border);"><th style="padding: 12px 0;">Date</th><th style="padding: 12px 0;">Loan Account</th><th style="padding: 12px 0;">Amount</th><th style="padding: 12px 0;">Status</th></tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">05 Oct 2026</td><td>Home Loan</td><td>₹42,500</td><td><span class="profile-badge" style="color:#EAB308;border-color:#EAB308">Upcoming</span></td></tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">12 Oct 2026</td><td>Car Loan</td><td>₹15,200</td><td><span class="profile-badge" style="color:#EAB308;border-color:#EAB308">Upcoming</span></td></tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">05 Sep 2026</td><td>Home Loan</td><td>₹42,500</td><td><span class="profile-badge" style="color:var(--dash-primary);border-color:var(--dash-primary)">Paid</span></td></tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">12 Sep 2026</td><td>Car Loan</td><td>₹15,200</td><td><span class="profile-badge" style="color:var(--dash-primary);border-color:var(--dash-primary)">Paid</span></td></tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">05 Aug 2026</td><td>Home Loan</td><td>₹42,500</td><td><span class="profile-badge" style="color:var(--dash-primary);border-color:var(--dash-primary)">Paid</span></td></tr>
+                    <tr><td style="padding: 12px 0;">12 Aug 2026</td><td>Car Loan</td><td>₹15,200</td><td><span class="profile-badge" style="color:var(--dash-primary);border-color:var(--dash-primary)">Paid</span></td></tr>
+                </table>
+            </div>
+
+            <h3 style="margin-bottom: 16px;">Pre-approved Offers</h3>
+            <div class="chart-card" style="display: flex; justify-content: space-between; align-items: center; background: linear-gradient(45deg, #1F2937, #0B0F19); border-left: 4px solid var(--dash-primary);">
+                <div>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 8px;">Personal Loan up to ₹5,00,000</h4>
+                    <p class="text-muted">Instant disbursal. No hidden charges. Valid till 31st Oct.</p>
+                </div>
+                <button onclick="window.location.href='404.html'" class="btn btn-export">Claim Offer</button>
+            </div>
+        </div>
+
+        <!-- Transactions View -->
+        <div id="transactions" class="dashboard-view" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                <h2>Transaction History</h2>
+                <div style="display: flex; gap: 12px;">
+                    <select class="chart-dropdown" style="padding: 8px 12px; border: 1px solid var(--dash-border); border-radius: 8px;"><option>All Accounts</option><option>Savings Account</option><option>Credit Card</option></select>
+                    <button onclick="window.location.href='404.html'" class="btn btn-export"><i class="fa-solid fa-download"></i> Statement</button>
+                </div>
+            </div>
+            
+            <div class="chart-card" style="margin-bottom: 40px;">
+                <table style="width: 100%; text-align: left; border-collapse: collapse;">
+                    <tr style="border-bottom: 1px solid var(--dash-border);"><th style="padding: 12px 0;">Date</th><th style="padding: 12px 0;">Description</th><th style="padding: 12px 0;">Category</th><th style="padding: 12px 0;">Amount</th><th style="padding: 12px 0;">Status</th></tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">24 Sep 2026</td><td>Amazon Purchase</td><td>Shopping</td><td class="trend-down">-₹4,500</td><td><span class="profile-badge" style="color:var(--dash-primary);border-color:var(--dash-primary)">Success</span></td></tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">22 Sep 2026</td><td>TechCorp Salary</td><td>Income</td><td class="trend-up">+₹85,000</td><td><span class="profile-badge" style="color:var(--dash-primary);border-color:var(--dash-primary)">Success</span></td></tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">20 Sep 2026</td><td>Electricity Bill</td><td>Utilities</td><td class="trend-down">-₹1,200</td><td><span class="profile-badge" style="color:var(--dash-primary);border-color:var(--dash-primary)">Success</span></td></tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">18 Sep 2026</td><td>Starbucks Coffee</td><td>Food & Dining</td><td class="trend-down">-₹350</td><td><span class="profile-badge" style="color:var(--dash-primary);border-color:var(--dash-primary)">Success</span></td></tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">15 Sep 2026</td><td>Netflix Subscription</td><td>Entertainment</td><td class="trend-down">-₹649</td><td><span class="profile-badge" style="color:var(--dash-primary);border-color:var(--dash-primary)">Success</span></td></tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">12 Sep 2026</td><td>Uber Ride</td><td>Transport</td><td class="trend-down">-₹450</td><td><span class="profile-badge" style="color:var(--dash-primary);border-color:var(--dash-primary)">Success</span></td></tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">10 Sep 2026</td><td>Dividend - Reliance</td><td>Investment</td><td class="trend-up">+₹1,250</td><td><span class="profile-badge" style="color:var(--dash-primary);border-color:var(--dash-primary)">Success</span></td></tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">08 Sep 2026</td><td>Grocery Store</td><td>Shopping</td><td class="trend-down">-₹3,200</td><td><span class="profile-badge" style="color:var(--dash-primary);border-color:var(--dash-primary)">Success</span></td></tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">05 Sep 2026</td><td>Home Loan EMI</td><td>Loans</td><td class="trend-down">-₹42,500</td><td><span class="profile-badge" style="color:var(--dash-primary);border-color:var(--dash-primary)">Success</span></td></tr>
+                    <tr><td style="padding: 12px 0;">01 Sep 2026</td><td>Gym Membership</td><td>Health</td><td class="trend-down">-₹2,000</td><td><span class="profile-badge" style="color:var(--dash-primary);border-color:var(--dash-primary)">Success</span></td></tr>
+                </table>
+                <div style="text-align: center; margin-top: 24px;">
+                    <button onclick="window.location.href='404.html'" class="btn" style="background: transparent; color: var(--dash-text); border: 1px solid var(--dash-border); padding: 8px 16px; border-radius: 8px;">Load More Transactions</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tax View -->
+        <div id="tax" class="dashboard-view" style="display: none;">
+            <h2 style="margin-bottom: 24px;">Tax Reports & Documents</h2>
+            
+            <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 24px;">
+                <div class="stat-card" style="background: var(--dash-primary); color: white;">
+                    <h3 style="color: rgba(255,255,255,0.8);">Estimated Tax Liability</h3>
+                    <h2 style="color: white; margin-top: 8px;">₹1,25,000</h2>
+                    <p style="font-size: 0.85rem; margin-top: 8px;">For FY 2025-26</p>
+                </div>
+                <div class="stat-card">
+                    <h3>80C Deductions Utilized</h3>
+                    <h2 style="margin-top: 8px; color: var(--dash-text);">₹1,50,000</h2>
+                    <p class="text-muted" style="font-size: 0.85rem; margin-top: 8px;">100% Limit Reached</p>
+                </div>
+                <div class="stat-card">
+                    <h3>TDS Deducted</h3>
+                    <h2 style="margin-top: 8px; color: var(--dash-text);">₹45,200</h2>
+                    <p class="text-muted" style="font-size: 0.85rem; margin-top: 8px;">View Form 26AS</p>
+                </div>
+            </div>
+
+            <h3 style="margin-bottom: 16px;">Tax Saving Investments</h3>
+            <div class="chart-card" style="margin-bottom: 24px;">
+                <table style="width: 100%; text-align: left; border-collapse: collapse;">
+                    <tr style="border-bottom: 1px solid var(--dash-border);"><th style="padding: 12px 0;">Investment Type</th><th style="padding: 12px 0;">Amount Invested</th><th style="padding: 12px 0;">Max Limit</th><th style="padding: 12px 0;">Action</th></tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">ELSS Mutual Funds</td><td>₹1,00,000</td><td>Part of 1.5L</td><td><a href="404.html" style="color: var(--dash-primary);">View Folio</a></td></tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">PPF (Public Provident Fund)</td><td>₹50,000</td><td>Part of 1.5L</td><td><a href="404.html" style="color: var(--dash-primary);">View Passbook</a></td></tr>
+                    <tr><td style="padding: 12px 0;">Health Insurance (80D)</td><td>₹25,000</td><td>₹25,000</td><td><a href="404.html" style="color: var(--dash-primary);">Download Receipt</a></td></tr>
+                </table>
+            </div>
+
+            <h3 style="margin-bottom: 16px;">Past Tax Returns</h3>
+            <div class="chart-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--dash-border);">
+                    <div><h4 style="font-size: 1.1rem;">FY 2024-25 (AY 2025-26)</h4><p class="text-muted">Filed on 15 July 2025 &bull; ITR-1</p></div>
+                    <button onclick="window.location.href='404.html'" class="btn btn-export" style="background: transparent; border: 1px solid var(--dash-border); color: var(--dash-text);"><i class="fa-solid fa-download"></i> Download ITR-V</button>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--dash-border);">
+                    <div><h4 style="font-size: 1.1rem;">FY 2023-24 (AY 2024-25)</h4><p class="text-muted">Filed on 20 July 2024 &bull; ITR-1</p></div>
+                    <button onclick="window.location.href='404.html'" class="btn btn-export" style="background: transparent; border: 1px solid var(--dash-border); color: var(--dash-text);"><i class="fa-solid fa-download"></i> Download ITR-V</button>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0;">
+                    <div><h4 style="font-size: 1.1rem;">FY 2022-23 (AY 2023-24)</h4><p class="text-muted">Filed on 10 July 2023 &bull; ITR-1</p></div>
+                    <button onclick="window.location.href='404.html'" class="btn btn-export" style="background: transparent; border: 1px solid var(--dash-border); color: var(--dash-text);"><i class="fa-solid fa-download"></i> Download ITR-V</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile View -->
+        <div id="profile" class="dashboard-view" style="display: none;">
+            <h2 style="margin-bottom: 24px;">Profile & Security</h2>
+            <div class="chart-card" style="display: flex; gap: 40px; align-items: center; margin-bottom: 24px;">
+                <div class="dyn-initial" style="width: 120px; height: 120px; background: var(--dash-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white;">S</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div>
+                            <h3 class="dyn-name" style="font-size: 1.8rem; margin-bottom: 8px;">Srinivas Kumar</h3>
+                            <p class="text-muted" style="margin-bottom: 4px;"><i class="fa-solid fa-envelope" style="width: 20px;"></i> <span class="dyn-email">srinivas@gmail.com</span> <span class="profile-badge" style="margin-left: 8px; color: var(--dash-primary); border-color: var(--dash-primary);">Verified</span></p>
+                            <p class="text-muted" style="margin-bottom: 16px;"><i class="fa-solid fa-phone" style="width: 20px;"></i> +91 98765 43210 <span class="profile-badge" style="margin-left: 8px; color: var(--dash-primary); border-color: var(--dash-primary);">Verified</span></p>
+                        </div>
+                        <button onclick="window.location.href='404.html'" class="btn btn-export">Edit Profile</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 24px;">
+                <div class="chart-card">
+                    <h3 style="margin-bottom: 16px;">KYC Status</h3>
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                        <div style="width: 48px; height: 48px; border-radius: 50%; background: rgba(16, 185, 129, 0.1); color: #10B981; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;"><i class="fa-solid fa-check"></i></div>
+                        <div>
+                            <h4 style="font-size: 1.1rem;">Fully Verified</h4>
+                            <p class="text-muted">Aadhaar and PAN linked successfully.</p>
+                        </div>
+                    </div>
+                    <button onclick="window.location.href='404.html'" class="btn" style="width: 100%; background: transparent; border: 1px solid var(--dash-border); color: var(--dash-text); padding: 10px; border-radius: 8px;">View Documents</button>
+                </div>
+                <div class="chart-card">
+                    <h3 style="margin-bottom: 16px;">Security</h3>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 1px solid var(--dash-border); margin-bottom: 12px;">
+                        <div><strong style="display: block;">Password</strong><span class="text-muted" style="font-size: 0.85rem;">Last changed 3 months ago</span></div>
+                        <button onclick="window.location.href='404.html'" class="btn" style="background: transparent; color: var(--dash-primary); border: none; cursor: pointer;">Update</button>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div><strong style="display: block;">Biometric Login</strong><span class="text-muted" style="font-size: 0.85rem;">Fingerprint / FaceID</span></div>
+                        <input type="checkbox" checked style="width: 20px; height: 20px;">
+                    </div>
+                </div>
+            </div>
+            
+            <h3 style="margin-bottom: 16px;">Linked Bank Accounts</h3>
+            <div class="chart-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--dash-border);">
+                    <div style="display: flex; align-items: center; gap: 16px;">
+                        <div style="width: 40px; height: 40px; background: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #000; font-weight: bold; font-size: 1.2rem;">H</div>
+                        <div><h4 style="font-size: 1.1rem;">HDFC Bank (Primary)</h4><p class="text-muted">Savings &bull; ending in 4029</p></div>
+                    </div>
+                    <span class="profile-badge" style="color:var(--dash-primary); border-color: var(--dash-primary);">Verified</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0;">
+                    <div style="display: flex; align-items: center; gap: 16px;">
+                        <div style="width: 40px; height: 40px; background: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #000; font-weight: bold; font-size: 1.2rem;">S</div>
+                        <div><h4 style="font-size: 1.1rem;">SBI Bank</h4><p class="text-muted">Savings &bull; ending in 8112</p></div>
+                    </div>
+                    <span class="profile-badge" style="color:var(--dash-primary); border-color: var(--dash-primary);">Verified</span>
+                </div>
+                <button onclick="window.location.href='404.html'" class="btn btn-export" style="width: 100%; margin-top: 16px; background: transparent; border: 1px dashed var(--dash-muted); color: var(--dash-text);">+ Add New Bank Account</button>
+            </div>
+        </div>
+
+        <!-- Settings View -->
+        <div id="settings" class="dashboard-view" style="display: none;">
+            <h2 style="margin-bottom: 24px;">Platform Settings</h2>
+            
+            <div class="stats-grid" style="grid-template-columns: 1fr 1fr; gap: 24px;">
+                <div class="chart-card">
+                    <h3 style="margin-bottom: 16px;">Notifications</h3>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--dash-border);">
+                        <div><h4>Push Notifications</h4><p class="text-muted" style="font-size: 0.85rem;">Alerts on mobile app</p></div>
+                        <input type="checkbox" checked style="width: 20px; height: 20px;">
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--dash-border);">
+                        <div><h4>Email Summaries</h4><p class="text-muted" style="font-size: 0.85rem;">Weekly portfolio updates</p></div>
+                        <input type="checkbox" checked style="width: 20px; height: 20px;">
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0;">
+                        <div><h4>SMS Alerts</h4><p class="text-muted" style="font-size: 0.85rem;">For OTPs and security alerts</p></div>
+                        <input type="checkbox" checked style="width: 20px; height: 20px;">
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <h3 style="margin-bottom: 16px;">Appearance & Data</h3>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--dash-border);">
+                        <div><h4>Dark Mode</h4><p class="text-muted" style="font-size: 0.85rem;">System default theme</p></div>
+                        <input type="checkbox" checked style="width: 20px; height: 20px;">
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--dash-border);">
+                        <div><h4>Data Sharing</h4><p class="text-muted" style="font-size: 0.85rem;">Allow diagnostic analytics</p></div>
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0;">
+                        <div><h4>Account Deletion</h4><p class="text-muted" style="font-size: 0.85rem;">Permanently delete account</p></div>
+                        <button onclick="window.location.href='404.html'" class="btn" style="background: rgba(239, 68, 68, 0.1); color: #EF4444; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;">Delete</button>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 style="margin-bottom: 16px; margin-top: 32px;">Connected Devices</h3>
+            <div class="chart-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--dash-border);">
+                    <div style="display: flex; align-items: center; gap: 16px;">
+                        <i class="fa-solid fa-laptop" style="font-size: 2rem; color: var(--dash-muted);"></i>
+                        <div><h4 style="font-size: 1.1rem;">Windows PC &bull; Chrome</h4><p class="text-muted">Bangalore, India &bull; Current Session</p></div>
+                    </div>
+                    <span class="profile-badge" style="color:var(--dash-primary); border-color: var(--dash-primary);">Active</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0;">
+                    <div style="display: flex; align-items: center; gap: 16px;">
+                        <i class="fa-solid fa-mobile-screen" style="font-size: 2rem; color: var(--dash-muted);"></i>
+                        <div><h4 style="font-size: 1.1rem;">iPhone 14 Pro &bull; Finora App</h4><p class="text-muted">Mumbai, India &bull; Last active 2 hours ago</p></div>
+                    </div>
+                    <button onclick="window.location.href='404.html'" class="btn" style="background: transparent; color: var(--dash-text); border: 1px solid var(--dash-border); padding: 6px 12px; border-radius: 4px; cursor: pointer;">Revoke</button>
+                </div>
+            </div>
+        </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         // Chart configuration to match dark theme closely
         Chart.defaults.color = '#9CA3AF';
@@ -231,5 +536,68 @@
             }
         });
     </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.sidebar-nav .nav-link');
+            const views = document.querySelectorAll('.dashboard-view');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('data-target');
+                    if(!targetId) return;
+                    
+                    // Update active class on nav
+                    navLinks.forEach(n => n.classList.remove('active'));
+                    link.classList.add('active');
+                    
+                    // Find current and next view
+                    const currentView = document.querySelector('.dashboard-view.active');
+                    const nextView = document.getElementById(targetId);
+                    
+                    if(currentView === nextView) return;
+                    
+                    // GSAP Animation
+                    gsap.to(currentView, {
+                        opacity: 0, 
+                        y: -20, 
+                        duration: 0.3, 
+                        onComplete: () => {
+                            currentView.classList.remove('active');
+                            currentView.style.display = 'none';
+                            
+                            nextView.style.display = 'block';
+                            nextView.classList.add('active');
+                            gsap.fromTo(nextView, 
+                                { opacity: 0, y: 20 }, 
+                                { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }
+                            );
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const savedEmail = localStorage.getItem('finora_user_email');
+        const savedName = localStorage.getItem('finora_user_name');
+        
+        if(savedEmail && savedName) {
+            const firstName = savedName.split(' ')[0] + '!';
+            const initial = savedName.charAt(0).toUpperCase();
+            
+            document.querySelectorAll('.dyn-name').forEach(el => el.textContent = savedName);
+            document.querySelectorAll('.dyn-email').forEach(el => el.textContent = savedEmail);
+            document.querySelectorAll('.dyn-first-name').forEach(el => el.textContent = firstName);
+            document.querySelectorAll('.dyn-initial').forEach(el => el.textContent = initial);
+        }
+    });
+</script>
+    <script src="JS/sidebar-toggle.js"></script>
 </body>
 </html>

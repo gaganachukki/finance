@@ -1,0 +1,50 @@
+/* =====================================================
+   HERO COVER IMAGES - Per-page backgrounds
+   ===================================================== */
+/* index hero */
+body.page-index .hero {
+    background-image: linear-gradient(to right, rgba(255,255,255,0.6), rgba(255,255,255,0.2)), url('../assets/hero_home.webp') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* about hero */
+body.page-about .about-hero {
+    background-image: linear-gradient(to right, rgba(255,255,255,0.6), rgba(255,255,255,0.2)), url('../assets/hero_about.webp') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* services hero */
+body.page-services .services-hero {
+    background-image: linear-gradient(to right, rgba(255,255,255,0.6), rgba(255,255,255,0.2)), url('../assets/hero_services.webp') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* blog hero */
+body.page-blog .blog-hero {
+    background-image: linear-gradient(to right, rgba(255,255,255,0.6), rgba(255,255,255,0.2)), url('../assets/hero_blog.webp') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* loans hero */
+body.page-loans .page-banner {
+    background-image: linear-gradient(to right, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.3)), url('../assets/hero_loans.webp') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* contact hero */
+body.page-contact .page-banner {
+    background-image: linear-gradient(to right, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.3)), url('../assets/hero_contact.webp') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}

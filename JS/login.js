@@ -48,7 +48,17 @@ document.addEventListener('DOMContentLoaded', () => {
             if (email.includes('@') && password.length >= 6) {
                 loginError.style.display = 'none';
                 
+                
+                // Extract name from email
+                let namePart = email.split('@')[0];
+                let formattedName = namePart.split(/[._-]/).map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+                
+                // Save to localStorage
+                localStorage.setItem('finora_user_email', email);
+                localStorage.setItem('finora_user_name', formattedName);
+                
                 // Redirect based on selected role
+
                 if (selectedRole === 'admin') {
                     window.location.href = 'admindashboard.html';
                 } else {

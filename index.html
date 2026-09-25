@@ -11,8 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/responsive.css">
+    <link rel="stylesheet" href="CSS/hero-covers.css">
 </head>
-<body>
+<body class="page-index">
+
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
@@ -28,22 +31,20 @@
             <div class="nav-actions">
                 <a href="login.html" class="btn btn-login"><i class="fa-regular fa-user" style="margin-right: 6px;"></i> Login <i class="fa-solid fa-arrow-right" style="margin-left: 4px; font-size: 0.8rem;"></i></a>
             </div>
-            <button class="hamburger">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+            <button class="hamburger" aria-label="Menu"><div class="hamburger-lines"><span></span><span></span><span></span></div></button>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero section-light">
         <div class="container hero-grid">
-            <div class="hero-content fade-in">
+            <div class="hero-content">
                 <span class="badge">Your Financial Growth Partner</span>
                 <h1>Build a Brighter<br><span class="text-primary">Financial</span> Future</h1>
                 <p>Smart financial solutions for a better tomorrow. Manage your money, get the right loans, and achieve your goals with FINORA.</p>
                 <div class="hero-actions">
-                    <a href="login.html" class="btn btn-login">Get Started Today <i class="fa-solid fa-arrow-right" style="margin-left: 6px; font-size: 0.8rem;"></i></a>
-                    <a href="#" class="btn btn-watch"><i class="fa-regular fa-circle-play"></i> Watch Video</a>
+                    <a href="login.html" class="btn-login">Get Started Today <i class="fa-solid fa-arrow-right" style="margin-left: 6px; font-size: 0.8rem;"></i></a>
+                    <a href="404.html" class="btn-watch"><i class="fa-regular fa-circle-play"></i> Watch Video</a>
                 </div>
                 <div class="trust-badges">
                     <div class="trust-badge">
@@ -69,23 +70,24 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-image fade-in">
+            
+            <div class="hero-image-wrapper">
                 <img src="assets/hero.webp" alt="Smart Financial Future" class="main-img">
                 
                 <div class="handwritten hero-hw">Small<br>Steps<br>Big<br>Goals</div>
 
                 <div class="floating-card top-left">
                     <div style="font-size: 0.75rem; color: var(--text-muted);">Total Savings</div>
-                    <div style="font-size: 1.25rem; font-weight: 700; color: var(--secondary-color);">₹2,45,000</div>
+                    <div style="font-size: 1.25rem; font-weight: 700; color: var(--navy-dark);">₹2,45,000</div>
                     <div class="growth-indicator"><i class="fa-solid fa-arrow-trend-up"></i> 12% this month</div>
-                    <div class="chart-icon"><i class="fa-solid fa-arrow-trend-up" style="color: #10B981; font-size: 2rem;"></i></div>
+                    <div class="chart-icon"><i class="fa-solid fa-arrow-trend-up" style="color: rgba(16, 185, 129, 0.2); font-size: 2.5rem;"></i></div>
                 </div>
                 
                 <div class="floating-card middle-left">
                     <div class="icon-bg-yellow"><i class="fa-solid fa-hand-holding-dollar"></i></div>
                     <div>
                         <div style="font-size: 0.75rem; color: var(--text-muted);">Loan Eligible</div>
-                        <div style="font-size: 1.1rem; font-weight: 700; color: var(--secondary-color);">₹5,00,000</div>
+                        <div style="font-size: 1.1rem; font-weight: 700; color: var(--navy-dark);">₹5,00,000</div>
                         <div style="font-size: 0.7rem; color: var(--text-muted);">Quick Approval</div>
                     </div>
                 </div>
@@ -93,16 +95,16 @@
                 <div class="floating-card bottom-right">
                     <div>
                         <div style="font-size: 0.75rem; color: var(--text-muted);">Investment Growth</div>
-                        <div style="display:flex; align-items:flex-end; gap:8px; margin-top:8px;">
+                        <div style="display:flex; align-items:flex-end; gap:12px; margin-top:8px;">
                             <div class="bars">
                                 <div class="bar" style="height: 15px;"></div>
                                 <div class="bar" style="height: 25px;"></div>
-                                <div class="bar" style="height: 35px;"></div>
+                                <div class="bar" style="height: 40px;"></div>
                                 <div class="bar" style="height: 20px;"></div>
                             </div>
                             <div>
-                                <div style="color: #10B981; font-weight: 700; font-size: 1.2rem;">+28%</div>
-                                <div style="font-size: 0.65rem; color: var(--text-muted); line-height:1.2;">Last 6 months<br>returns</div>
+                                <div style="color: #10B981; font-weight: 800; font-size: 1.3rem; line-height: 1;">+28%</div>
+                                <div style="font-size: 0.65rem; color: var(--text-muted); line-height:1.2; margin-top: 4px;">Last 6 months</div>
                             </div>
                         </div>
                     </div>
@@ -113,7 +115,7 @@
 
     <!-- Services Row -->
     <section class="services-row section-light">
-        <div class="container fade-in">
+        <div class="container">
             <div class="services-wrapper">
                 <div class="service-item">
                     <div class="service-icon"><i class="fa-solid fa-magnifying-glass-dollar"></i></div>
@@ -132,12 +134,12 @@
                 </div>
                 <div class="service-item">
                     <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
-                    <h4>Investment Planning</h4>
+                    <h4>Investments</h4>
                     <p>Wealth for tomorrow</p>
                 </div>
                 <div class="service-item">
                     <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h4>Financial Advisory</h4>
+                    <h4>Advisory</h4>
                     <p>Expert guidance</p>
                 </div>
             </div>
@@ -146,12 +148,12 @@
 
     <!-- About Section -->
     <section class="about-section section-light">
-        <div class="container grid-2" style="align-items: center;">
+        <div class="container grid grid-2" style="align-items: center; gap: 80px;">
             <div class="fade-in">
                 <span class="badge" style="text-transform: uppercase;">About FINORA</span>
                 <h2>More Than Finance,<br>A Better Tomorrow</h2>
                 <p class="text-muted" style="margin-bottom: 24px;">At FINORA, we believe everyone deserves financial freedom. We provide simple, transparent, and reliable financial solutions to help you achieve your personal and professional goals.</p>
-                <a href="404.html" class="btn btn-primary" style="margin-bottom: 40px;">Learn More About Us <i class="fa-solid fa-arrow-right" style="margin-left: 6px; font-size: 0.8rem;"></i></a>
+                <a href="about.html" class="btn btn-primary" style="margin-bottom: 40px;">Learn More About Us <i class="fa-solid fa-arrow-right" style="margin-left: 6px; font-size: 0.8rem;"></i></a>
                 
                 <div class="about-stats">
                     <div>
@@ -168,7 +170,7 @@
                     </div>
                 </div>
             </div>
-            <div class="fade-in about-image-wrapper">
+            <div class="about-image-wrapper">
                 <img src="assets/investment.webp" alt="Office Building" class="about-img">
                 <div class="glass-card">
                     <h3>"Empowering<br>your financial<br>journey"</h3>
@@ -179,16 +181,16 @@
     </section>
 
     <!-- Smart Tools Section -->
-    <section class="tools-section section-light">
+    <section class="tools-section">
         <div class="bg-circle"></div>
-        <div class="container grid-2" style="align-items: center;">
-            <div class="fade-in" style="position:relative;">
-                <img src="assets/finance-dashboard.webp" alt="Mobile App" class="app-mockup">
+        <div class="container grid grid-2" style="align-items: center; gap: 80px;">
+            <div style="position:relative; z-index: 2;">
+                <img src="assets/finance-dashboard.webp" alt="Mobile App" class="app-mockup" style="width: 100%; max-width: 600px; margin: 0 auto; display: block;">
             </div>
-            <div class="fade-in" style="position:relative; z-index:2; padding-left:40px;">
-                <span class="badge" style="text-transform: uppercase; background: #F1F5F9; color: var(--text-muted);">Why Choose FINORA</span>
+            <div style="position:relative; z-index:2;">
+                <span class="badge" style="text-transform: uppercase; background: white; border: 1px solid #E2E8F0; color: var(--text-muted);">Why Choose FINORA</span>
                 <h2>Smart Tools for<br>Smarter Decisions</h2>
-                <p class="text-muted" style="margin-bottom: 24px;">Track expenses, manage loans, grow investments and stay in control — all in one place.</p>
+                <p class="text-muted" style="margin-bottom: 32px;">Track expenses, manage loans, grow investments and stay in control — all in one place. Your ultimate digital banking companion.</p>
                 
                 <ul class="feature-list-checks">
                     <li><i class="fa-solid fa-circle-check"></i> Easy Loan Applications</li>
@@ -197,7 +199,7 @@
                     <li><i class="fa-solid fa-circle-check"></i> Personalized Financial Insights</li>
                 </ul>
                 
-                <a href="404.html" class="btn btn-login" style="margin-top: 24px;">Explore Our Services <i class="fa-solid fa-arrow-right" style="margin-left: 6px; font-size: 0.8rem;"></i></a>
+                <a href="services.html" class="btn-login" style="margin-top: 24px; display: inline-flex;">Explore Our Services <i class="fa-solid fa-arrow-right" style="margin-left: 6px; font-size: 0.8rem;"></i></a>
 
                 <div class="handwritten tools-hw">Plan<br>Save<br>Invest<br>Grow</div>
             </div>
@@ -205,7 +207,184 @@
     </section>
 
 
-    <!-- Footer -->
+    <!-- NEW SECTION 1: How It Works -->
+    <section class="how-it-works section-muted" style="padding: 100px 0;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <span class="badge">Simple Process</span>
+                <h2>How It Works</h2>
+            </div>
+            <div class="grid-3 how-grid">
+                <div class="how-card" style="background: white; padding: 40px; border-radius: 20px; text-align: center; box-shadow: var(--shadow-sm);">
+                    <div style="width: 60px; height: 60px; background: var(--bg-badge); color: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 24px; font-weight: bold;">1</div>
+                    <h3 style="margin-bottom: 16px;">Create Account</h3>
+                    <p class="text-muted">Sign up in minutes with our fully digital KYC process. No paperwork required.</p>
+                </div>
+                <div class="how-card" style="background: white; padding: 40px; border-radius: 20px; text-align: center; box-shadow: var(--shadow-sm);">
+                    <div style="width: 60px; height: 60px; background: var(--bg-badge); color: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 24px; font-weight: bold;">2</div>
+                    <h3 style="margin-bottom: 16px;">Fund Your Wallet</h3>
+                    <p class="text-muted">Link your bank securely or transfer funds to start managing your wealth instantly.</p>
+                </div>
+                <div class="how-card" style="background: white; padding: 40px; border-radius: 20px; text-align: center; box-shadow: var(--shadow-sm);">
+                    <div style="width: 60px; height: 60px; background: var(--bg-badge); color: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 24px; font-weight: bold;">3</div>
+                    <h3 style="margin-bottom: 16px;">Grow & Track</h3>
+                    <p class="text-muted">Watch your investments grow with real-time analytics and smart financial tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION 2: Financial Products -->
+    <section class="products-section section-light" style="padding: 100px 0; overflow: hidden;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <span class="badge">Ecosystem</span>
+                <h2>Everything You Need</h2>
+            </div>
+            <div class="products-container" style="display: flex; gap: 30px; overflow-x: auto; padding-bottom: 20px;">
+                <div class="product-card" style="min-width: 300px; background: var(--navy-dark); color: white; padding: 40px; border-radius: 24px;">
+                    <i class="fa-solid fa-money-bill-transfer" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 24px;"></i>
+                    <h3 style="color: white; margin-bottom: 16px;">Global Transfers</h3>
+                    <p style="color: #94A3B8; font-size: 0.9rem;">Send money internationally with real exchange rates and no hidden fees.</p>
+                </div>
+                <div class="product-card" style="min-width: 300px; background: #F8FAFC; padding: 40px; border-radius: 24px; border: 1px solid var(--border-color);">
+                    <i class="fa-solid fa-piggy-bank" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 24px;"></i>
+                    <h3 style="margin-bottom: 16px;">Smart Vaults</h3>
+                    <p class="text-muted" style="font-size: 0.9rem;">Earn up to 6% APY on your idle cash with auto-saving roundups.</p>
+                </div>
+                <div class="product-card" style="min-width: 300px; background: #F8FAFC; padding: 40px; border-radius: 24px; border: 1px solid var(--border-color);">
+                    <i class="fa-solid fa-chart-pie" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 24px;"></i>
+                    <h3 style="margin-bottom: 16px;">Stock Trading</h3>
+                    <p class="text-muted" style="font-size: 0.9rem;">Commission-free trading on thousands of global stocks and ETFs.</p>
+                </div>
+                <div class="product-card" style="min-width: 300px; background: #F8FAFC; padding: 40px; border-radius: 24px; border: 1px solid var(--border-color);">
+                    <i class="fa-solid fa-shield-cat" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 24px;"></i>
+                    <h3 style="margin-bottom: 16px;">Insurance</h3>
+                    <p class="text-muted" style="font-size: 0.9rem;">On-demand coverage for your travel, devices, and health.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION 3: FAQ -->
+    <section class="faq-section section-muted" style="padding: 100px 0;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <span class="badge">Support</span>
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-wrapper" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;">
+                <div class="faq-item" style="background: white; padding: 24px; border-radius: 16px; border: 1px solid var(--border-color);">
+                    <h4 style="margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">Is my money safe with FINORA? <i class="fa-solid fa-chevron-down" style="color: var(--primary-color);"></i></h4>
+                    <p class="text-muted" style="font-size: 0.95rem;">Yes, funds are held with tier-1 partner banks and are fully insured up to regulatory limits. We also use 256-bit encryption.</p>
+                </div>
+                <div class="faq-item" style="background: white; padding: 24px; border-radius: 16px; border: 1px solid var(--border-color);">
+                    <h4 style="margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">How long does loan approval take? <i class="fa-solid fa-chevron-down" style="color: var(--primary-color);"></i></h4>
+                    <p class="text-muted" style="font-size: 0.95rem;">Our AI-driven engine processes personal loans in under 10 minutes, with instant disbursement to your wallet.</p>
+                </div>
+                <div class="faq-item" style="background: white; padding: 24px; border-radius: 16px; border: 1px solid var(--border-color);">
+                    <h4 style="margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">Are there any hidden fees? <i class="fa-solid fa-chevron-down" style="color: var(--primary-color);"></i></h4>
+                    <p class="text-muted" style="font-size: 0.95rem;">No. Transparency is one of our core values. All pricing is upfront, and we don't charge maintenance fees.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Global Reach -->
+    <section class="global-reach">
+        <div class="container">
+            <h2>Making a Global Impact</h2>
+            <div class="global-grid">
+                <div class="global-stat">
+                    <h3>15+</h3>
+                    <p>Countries Supported</p>
+                </div>
+                <div class="global-stat">
+                    <h3>$2B+</h3>
+                    <p>Volume Processed</p>
+                </div>
+                <div class="global-stat">
+                    <h3>99.9%</h3>
+                    <p>Server Uptime</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="badge">Success Stories</span>
+                <h2>What Our Users Say</h2>
+            </div>
+            <div class="testi-grid">
+                <div class="testi-card">
+                    <i class="fa-solid fa-quote-left testi-quote"></i>
+                    <p>"FINORA completely changed how I manage my business finances. The automated payroll and instant credit lines are a lifesaver."</p>
+                    <div class="testi-author">
+                        <img src="assets/customer-1.webp" alt="Client">
+                        <div class="testi-author-info">
+                            <h4>Emily Chen</h4>
+                            <span>Startup Founder</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <i class="fa-solid fa-quote-left testi-quote"></i>
+                    <p>"The private wealth advisory team helped me rebalance my portfolio and legally optimize my taxes. Highly recommended."</p>
+                    <div class="testi-author">
+                        <img src="assets/customer-2.webp" alt="Client">
+                        <div class="testi-author-info">
+                            <h4>David Miller</h4>
+                            <span>Investor</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <i class="fa-solid fa-quote-left testi-quote"></i>
+                    <p>"I love the digital wallet feature. Paying bills and tracking expenses in real-time has never been this seamless."</p>
+                    <div class="testi-author">
+                        <img src="assets/customer-3.webp" alt="Client">
+                        <div class="testi-author-info">
+                            <h4>Sophia Patel</h4>
+                            <span>Freelancer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Download App CTA -->
+    <section class="download-app">
+        <div class="container download-grid">
+            <div class="download-text">
+                <h2>Take your finances everywhere</h2>
+                <p>Download the FINORA app and get full control over your money, loans, and investments from the palm of your hand.</p>
+                <div class="app-buttons">
+                    <div class="app-btn" onclick="window.location.href='404.html'" style="cursor: pointer;">
+                        <i class="fa-brands fa-apple"></i>
+                        <div>
+                            <span>Download on the</span>
+                            <div style="font-size: 1rem; color: white;">App Store</div>
+                        </div>
+                    </div>
+                    <div class="app-btn" onclick="window.location.href='404.html'" style="cursor: pointer;">
+                        <i class="fa-brands fa-google-play"></i>
+                        <div>
+                            <span>GET IT ON</span>
+                            <div style="font-size: 1rem; color: white;">Google Play</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="assets/iphone18.webp" alt="FINORA Mobile App" class="app-showcase-img">
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
         <!-- ... (Same footer as before) ... -->
         <div class="container">
@@ -249,6 +428,12 @@
         </div>
     </footer>
 
+    <!-- GSAP Libraries for Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
     <script src="JS/script.js"></script>
+    <script src="JS/home-animations.js"></script>
+    <script src="JS/mobile-nav.js"></script>
 </body>
 </html>

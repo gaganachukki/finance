@@ -12,8 +12,10 @@
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/index.css">
     <link rel="stylesheet" href="CSS/blog.css">
+    <link rel="stylesheet" href="CSS/responsive.css">
+    <link rel="stylesheet" href="CSS/hero-covers.css">
 </head>
-<body>
+<body class="page-blog">
 
     <!-- Navbar -->
     <nav class="navbar">
@@ -30,9 +32,7 @@
             <div class="nav-actions">
                 <a href="login.html" class="btn btn-login"><i class="fa-regular fa-user" style="margin-right: 6px;"></i> Login <i class="fa-solid fa-arrow-right" style="margin-left: 4px; font-size: 0.8rem;"></i></a>
             </div>
-            <button class="hamburger">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+            <button class="hamburger" aria-label="Menu"><div class="hamburger-lines"><span></span><span></span><span></span></div></button>
         </div>
     </nav>
 
@@ -230,5 +230,6 @@
     
     <script src="JS/script.js"></script>
     <script src="JS/blog-animations.js"></script>
+    <script src="JS/mobile-nav.js"></script>
 </body>
 </html>

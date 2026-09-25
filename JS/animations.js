@@ -95,4 +95,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         duration: 1,
         ease: "power3.out"
     });
+    
+
 });

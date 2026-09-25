@@ -12,8 +12,10 @@
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/index.css">
     <link rel="stylesheet" href="CSS/about.css">
+    <link rel="stylesheet" href="CSS/responsive.css">
+    <link rel="stylesheet" href="CSS/hero-covers.css">
 </head>
-<body>
+<body class="page-about">
 
     <!-- Navbar -->
     <nav class="navbar">
@@ -30,15 +32,13 @@
             <div class="nav-actions">
                 <a href="login.html" class="btn btn-login"><i class="fa-regular fa-user" style="margin-right: 6px;"></i> Login <i class="fa-solid fa-arrow-right" style="margin-left: 4px; font-size: 0.8rem;"></i></a>
             </div>
-            <button class="hamburger">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+            <button class="hamburger" aria-label="Menu"><div class="hamburger-lines"><span></span><span></span><span></span></div></button>
         </div>
     </nav>
 
     <!-- 1. Hero Section -->
     <section class="about-hero">
-        <div class="container">
+        <div class="container fade-in">
             <h1>About <span class="text-primary">FINORA</span></h1>
             <p>We are redefining the future of finance. Empowering individuals and businesses with smart, secure, and intuitive tools.</p>
         </div>
@@ -47,12 +47,12 @@
     <!-- 2. Our Story -->
     <section class="story-section">
         <div class="container story-grid">
-            <div class="story-content">
+            <div class="story-content fade-in">
                 <h2>Our Story</h2>
                 <p class="text-muted" style="margin-bottom: 24px;">Founded in 2026, FINORA started with a simple belief: managing money should not be complicated. Traditional banking systems were slow, fragmented, and disconnected from modern user needs.</p>
                 <p class="text-muted">We built a unified platform where loans, investments, and daily banking come together seamlessly. Today, we manage over ₹500Cr in assets and help over 100,000 customers achieve their financial dreams.</p>
             </div>
-            <div class="story-image">
+            <div class="story-image fade-in">
                 <img src="assets/hero.webp" alt="Our Story">
             </div>
         </div>
@@ -63,17 +63,17 @@
         <div class="container">
             <h2>Our Core Values</h2>
             <div class="values-grid">
-                <div class="value-card">
+                <div class="value-card fade-in">
                     <i class="fa-solid fa-shield-halved"></i>
                     <h3>Security First</h3>
                     <p style="color: #94A3B8;">We employ bank-grade encryption to ensure your data and money are always protected.</p>
                 </div>
-                <div class="value-card">
+                <div class="value-card fade-in">
                     <i class="fa-solid fa-lightbulb"></i>
                     <h3>Innovation</h3>
                     <p style="color: #94A3B8;">We continuously evolve our platform to bring you the smartest financial tools available.</p>
                 </div>
-                <div class="value-card">
+                <div class="value-card fade-in">
                     <i class="fa-solid fa-handshake"></i>
                     <h3>Transparency</h3>
                     <p style="color: #94A3B8;">No hidden fees, no confusing jargon. We believe in complete financial clarity.</p>
@@ -90,7 +90,7 @@
                 <p class="text-muted">The visionaries behind FINORA.</p>
             </div>
             <div class="team-grid">
-                <div class="team-member">
+                <div class="team-member fade-in">
                     <div class="team-img-wrapper">
                         <img src="assets/customer-1.webp" alt="CEO">
                     </div>
@@ -99,7 +99,7 @@
                         <p>CEO & Founder</p>
                     </div>
                 </div>
-                <div class="team-member">
+                <div class="team-member fade-in">
                     <div class="team-img-wrapper">
                         <img src="assets/customer-2.webp" alt="CTO">
                     </div>
@@ -108,7 +108,7 @@
                         <p>Chief Technology Officer</p>
                     </div>
                 </div>
-                <div class="team-member">
+                <div class="team-member fade-in">
                     <div class="team-img-wrapper">
                         <img src="assets/customer-3.webp" alt="CFO">
                     </div>
@@ -117,7 +117,7 @@
                         <p>Chief Financial Officer</p>
                     </div>
                 </div>
-                <div class="team-member">
+                <div class="team-member fade-in">
                     <div class="team-img-wrapper">
                         <img src="assets/customer-1.webp" alt="Head of Product">
                     </div>
@@ -138,28 +138,28 @@
                 <p class="text-muted">Milestones that define our growth.</p>
             </div>
             <div class="timeline">
-                <div class="timeline-item left">
+                <div class="timeline-item left fade-in">
                     <div class="timeline-content">
                         <span class="timeline-date">Jan 2024</span>
                         <h3>Company Founded</h3>
                         <p class="text-muted">FINORA was established with a seed funding of $2M.</p>
                     </div>
                 </div>
-                <div class="timeline-item right">
+                <div class="timeline-item right fade-in">
                     <div class="timeline-content">
                         <span class="timeline-date">Nov 2024</span>
                         <h3>Platform Launch</h3>
                         <p class="text-muted">Successfully launched our unified digital banking platform.</p>
                     </div>
                 </div>
-                <div class="timeline-item left">
+                <div class="timeline-item left fade-in">
                     <div class="timeline-content">
                         <span class="timeline-date">Aug 2025</span>
                         <h3>100K Customers</h3>
                         <p class="text-muted">Reached a major milestone of 100,000 active users.</p>
                     </div>
                 </div>
-                <div class="timeline-item right">
+                <div class="timeline-item right fade-in">
                     <div class="timeline-content">
                         <span class="timeline-date">Present</span>
                         <h3>Expansion</h3>
@@ -171,7 +171,114 @@
     </section>
 
     <!-- 6. Join Us / CTA -->
-    <section class="join-section">
+    
+    <!-- NEW SECTION: Security & Technology -->
+    <section class="section section-light security-tech-section">
+        <div class="container grid-2" style="align-items: start;">
+            <div class="fade-in">
+                <h2>Bank-Grade Security. <br><span class="text-primary">Next-Gen Tech.</span></h2>
+                <p class="text-muted" style="margin-bottom: 24px; font-size: 1.1rem;">
+                    We treat your financial security with the utmost priority. Our platform is built on a foundation of zero-trust architecture, utilizing state-of-the-art encryption and AI-driven fraud detection to ensure your assets are protected 24/7.
+                </p>
+                <div class="tech-grid">
+                    <div class="tech-box">
+                        <i class="fa-solid fa-lock text-primary"></i>
+                        <h4>256-bit AES</h4>
+                        <p>Military-grade encryption for all data</p>
+                    </div>
+                    <div class="tech-box">
+                        <i class="fa-solid fa-shield-halved text-primary"></i>
+                        <h4>AI Fraud Engine</h4>
+                        <p>Real-time anomaly detection</p>
+                    </div>
+                    <div class="tech-box">
+                        <i class="fa-solid fa-server text-primary"></i>
+                        <h4>99.99% Uptime</h4>
+                        <p>Multi-region cloud redundancy</p>
+                    </div>
+                    <div class="tech-box">
+                        <i class="fa-solid fa-fingerprint text-primary"></i>
+                        <h4>Biometrics</h4>
+                        <p>Advanced identity verification</p>
+                    </div>
+                </div>
+            </div>
+            <div class="security-image fade-in" style="text-align: center;">
+                <img src="assets/hero_services.webp" alt="Security Infrastructure" style="border-radius: 24px; box-shadow: var(--shadow-lg);">
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Global Presence -->
+    <section class="section section-muted global-presence-section">
+        <div class="container text-center fade-in">
+            <h2>Our Global Footprint</h2>
+            <p class="text-muted" style="max-width: 600px; margin: 0 auto 48px;">
+                While we operate digitally, our roots are planted in the world's major financial hubs. We are a global team working around the clock.
+            </p>
+            <div class="grid-3 text-left">
+                <div class="card office-card">
+                    <div class="office-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <h3>Salem</h3>
+                    <p class="text-muted">India Headquarters</p>
+                    <hr style="border: none; border-top: 1px solid var(--border-color); margin: 16px 0;">
+                    <p class="text-muted"><i class="fa-solid fa-building" style="margin-right: 8px;"></i> Omalur Main Road</p>
+                    <p class="text-muted"><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> salem@finora.com</p>
+                </div>
+                <div class="card office-card">
+                    <div class="office-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <h3>Bangalore</h3>
+                    <p class="text-muted">Tech Hub</p>
+                    <hr style="border: none; border-top: 1px solid var(--border-color); margin: 16px 0;">
+                    <p class="text-muted"><i class="fa-solid fa-building" style="margin-right: 8px;"></i> MG Road</p>
+                    <p class="text-muted"><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> bangalore@finora.com</p>
+                </div>
+                <div class="card office-card">
+                    <div class="office-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <h3>Chennai</h3>
+                    <p class="text-muted">Regional Hub</p>
+                    <hr style="border: none; border-top: 1px solid var(--border-color); margin: 16px 0;">
+                    <p class="text-muted"><i class="fa-solid fa-building" style="margin-right: 8px;"></i> OMR IT Expressway</p>
+                    <p class="text-muted"><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> chennai@finora.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Awards & Recognition -->
+    <section class="section section-light awards-section">
+        <div class="container text-center fade-in">
+            <h2>Industry Recognition</h2>
+            <p class="text-muted" style="max-width: 600px; margin: 0 auto 48px;">
+                We don't build for awards, but we're honored when our dedication to financial innovation is recognized by industry leaders.
+            </p>
+            <div class="grid-4">
+                <div class="card award-card">
+                    <i class="fa-solid fa-trophy" style="font-size: 2.5rem; color: #F59E0B; margin-bottom: 16px;"></i>
+                    <h4>Best Fintech Startup</h4>
+                    <p class="text-muted" style="font-size: 0.9rem;">Global Finance Awards 2025</p>
+                </div>
+                <div class="card award-card">
+                    <i class="fa-solid fa-medal" style="font-size: 2.5rem; color: #F59E0B; margin-bottom: 16px;"></i>
+                    <h4>Excellence in Security</h4>
+                    <p class="text-muted" style="font-size: 0.9rem;">CyberSec Summit 2024</p>
+                </div>
+                <div class="card award-card">
+                    <i class="fa-solid fa-award" style="font-size: 2.5rem; color: #F59E0B; margin-bottom: 16px;"></i>
+                    <h4>Most Innovative App</h4>
+                    <p class="text-muted" style="font-size: 0.9rem;">TechCrunch Disrupt 2024</p>
+                </div>
+                <div class="card award-card">
+                    <i class="fa-solid fa-star" style="font-size: 2.5rem; color: #F59E0B; margin-bottom: 16px;"></i>
+                    <h4>Top 50 Workplaces</h4>
+                    <p class="text-muted" style="font-size: 0.9rem;">Forbes List 2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="join-section fade-in">
         <div class="container">
             <h2>Ready to transform your finances?</h2>
             <p>Join thousands of users who trust FINORA for a brighter, secure financial future.</p>
@@ -223,10 +330,11 @@
     </footer>
 
     <!-- GSAP Libraries for Animation -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    
     
     <script src="JS/script.js"></script>
-    <script src="JS/animations.js"></script>
+    
+    <script src="JS/mobile-nav.js"></script>
 </body>
 </html>

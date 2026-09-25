@@ -31,7 +31,7 @@ body {
     color: var(--text-main);
     background-color: var(--background-light);
     line-height: 1.6;
-    overflow-x: hidden;
+    /* overflow-x: hidden removed to fix GSAP ScrollTrigger */
 }
 
 a {
@@ -95,9 +95,9 @@ h3 { font-size: 1.5rem; }
     gap: 24px;
 }
 
-.grid-2 { grid-template-columns: repeat(2, 1fr); }
-.grid-3 { grid-template-columns: repeat(3, 1fr); }
-.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); }
 
 /* Buttons */
 .btn {
@@ -314,76 +314,7 @@ h3 { font-size: 1.5rem; }
     transform: translateY(0);
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-    h1 { font-size: 2.8rem; }
-    .grid-4 { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 768px) {
-    h1 { font-size: 2.5rem; }
-    h2 { font-size: 2rem; }
-    
-    .nav-links, .nav-actions .btn {
-        display: none;
-    }
-    
-    .hamburger {
-        display: block;
-    }
-    
-    .navbar.mobile-open .nav-links {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: white;
-        padding: 24px;
-        box-shadow: var(--shadow-md);
-        border-top: 1px solid var(--border-color);
-    }
-    .navbar.mobile-open .nav-actions .btn {
-        display: inline-block;
-    }
-    .navbar.mobile-open .nav-actions {
-        display: flex;
-        position: absolute;
-        top: 100%;
-        margin-top: 250px;
-        left: 24px;
-        z-index: 1001;
-    }
-
-    .grid-3 { grid-template-columns: repeat(2, 1fr); }
-    
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-    }
-    
-    .footer-bottom {
-        flex-direction: column;
-        gap: 16px;
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 { font-size: 2.2rem; }
-    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-    .section { padding: 48px 0; }
-    .card { padding: 24px; }
-}
-
-/* Specific to 375px requirements */
-@media (max-width: 375px) {
-    .container { padding: 0 16px; }
-    h1 { font-size: 2rem; }
-    .btn { padding: 12px 20px; font-size: 0.9rem; }
-    .navbar.mobile-open .nav-links { padding: 16px; }
-}
+/* Responsive rules moved to CSS/responsive.css */
 
 /* Added btn-login globally */
 .btn-login {

@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Base userdashboard styles + specific admin styles -->
     <link rel="stylesheet" href="CSS/admindashboard.css">
+    <link rel="stylesheet" href="CSS/dashboard-responsive.css">
 </head>
 <body>
 
@@ -22,7 +23,7 @@
             <div class="profile-avatar avatar-light-green">A</div>
             <div class="profile-info">
                 <h4>Admin <i class="fa-solid fa-circle-check" style="color: var(--dash-primary); font-size: 0.8rem; margin-left: 4px;"></i></h4>
-                <p>admin@finora.com</p>
+                <p class="dyn-email"><span class="dyn-email">admin@finora.com</span></p>
                 <span class="profile-badge">SUPER ADMIN</span>
             </div>
         </div>
@@ -31,23 +32,23 @@
             <div class="nav-section">
                 <div class="nav-section-title">Main</div>
                 <ul>
-                    <li><a href="admindashboard.html" class="active"><i class="fa-solid fa-table-cells-large"></i> Dashboard</a></li>
-                    <li><a href="404.html"><i class="fa-solid fa-users"></i> Users</a></li>
-                    <li><a href="404.html"><i class="fa-solid fa-file-invoice-dollar"></i> Loans</a></li>
+                    <li><a href="404.html" class="nav-link active" data-target="dashboard"><i class="fa-solid fa-table-cells-large"></i> Dashboard</a></li>
+                    <li><a href="404.html" class="nav-link" data-target="users"><i class="fa-solid fa-users"></i> Users</a></li>
+                    <li><a href="404.html" class="nav-link" data-target="loans"><i class="fa-solid fa-file-invoice-dollar"></i> Loans</a></li>
                 </ul>
             </div>
             <div class="nav-section">
                 <div class="nav-section-title">Resources</div>
                 <ul>
-                    <li><a href="404.html"><i class="fa-solid fa-book-open"></i> Document Library</a></li>
-                    <li><a href="404.html"><i class="fa-solid fa-chart-line"></i> Financial Reports</a></li>
+                    <li><a href="404.html" class="nav-link" data-target="documents"><i class="fa-solid fa-book-open"></i> Document Library</a></li>
+                    <li><a href="404.html" class="nav-link" data-target="reports"><i class="fa-solid fa-chart-line"></i> Financial Reports</a></li>
                 </ul>
             </div>
             <div class="nav-section">
                 <div class="nav-section-title">System</div>
                 <ul>
-                    <li><a href="404.html"><i class="fa-solid fa-user-shield"></i> Admin Profile</a></li>
-                    <li><a href="404.html"><i class="fa-solid fa-sliders"></i> Platform Settings</a></li>
+                    <li><a href="404.html" class="nav-link" data-target="profile"><i class="fa-solid fa-user-shield"></i> Admin Profile</a></li>
+                    <li><a href="404.html" class="nav-link" data-target="settings"><i class="fa-solid fa-sliders"></i> Platform Settings</a></li>
                     <li style="margin-top: 16px;"><a href="login.html" class="logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
                 </ul>
             </div>
@@ -70,17 +71,18 @@
             </div>
         </header>
 
-        <!-- Header Overview -->
+        <div id="dashboard" class="dashboard-view active">
+<!-- Header Overview -->
         <section class="admin-header">
             <div class="admin-title">
                 <h1>Overview</h1>
-                <p>Welcome back, <span>Admin!</span> Here's what's happening today.</p>
+                <p>Welcome back, <span class="dyn-first-name">Admin!</span> Here's what's happening today.</p>
             </div>
             <div class="admin-actions">
                 <div class="date-picker">
                     20 Aug 2026 <i class="fa-regular fa-calendar"></i>
                 </div>
-                <button class="btn-export">
+                <button onclick="window.location.href='404.html'" class="btn-export">
                     <i class="fa-solid fa-download"></i> Export Report
                 </button>
             </div>
@@ -175,67 +177,425 @@
                 </div>
             </div>
         </section>
-    </main>
+</div>
 
-    <!-- Chart.js for rendering graphs -->
+        
+        <!-- Users View -->
+        <div id="users" class="dashboard-view" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                <h2>User Management</h2>
+                <div style="display: flex; gap: 16px;">
+                    <input type="text" placeholder="Search users..." style="padding: 10px 16px; border-radius: 8px; border: 1px solid var(--dash-border); background: var(--dash-bg); color: var(--dash-text);">
+                    <button onclick="window.location.href='404.html'" class="btn btn-export">+ Add New User</button>
+                </div>
+            </div>
+            
+            <div class="stats-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 24px;">
+                <div class="stat-card"><h3>Total Users</h3><h2 style="color:var(--dash-primary)">2,548</h2></div>
+                <div class="stat-card"><h3>Active Today</h3><h2>1,204</h2></div>
+                <div class="stat-card"><h3>New This Week</h3><h2>+84</h2></div>
+                <div class="stat-card"><h3>Suspended</h3><h2 style="color:var(--dash-red)">12</h2></div>
+            </div>
+
+            <div class="chart-card" style="margin-bottom: 32px;">
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; text-align: left; border-collapse: collapse; min-width: 800px;">
+                        <tr style="border-bottom: 1px solid var(--dash-border);"><th style="padding: 12px 0;">ID</th><th style="padding: 12px 0;">Name</th><th style="padding: 12px 0;">Email</th><th style="padding: 12px 0;">Registration Date</th><th style="padding: 12px 0;">Status</th><th style="padding: 12px 0;">Action</th></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">#1042</td><td>Emily Chen</td><td>emily@example.com</td><td>15 Aug 2026</td><td><span class="profile-badge" style="color:var(--dash-primary);border-color:var(--dash-primary)">Active</span></td><td><a href="404.html" style="color:#3B82F6; margin-right: 12px;">Edit</a><a href="404.html" style="color:#EF4444;">Ban</a></td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">#1043</td><td>David Miller</td><td>david@example.com</td><td>14 Aug 2026</td><td><span class="profile-badge" style="color:var(--dash-primary);border-color:var(--dash-primary)">Active</span></td><td><a href="404.html" style="color:#3B82F6; margin-right: 12px;">Edit</a><a href="404.html" style="color:#EF4444;">Ban</a></td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">#1044</td><td>John Doe</td><td>john@example.com</td><td>12 Aug 2026</td><td><span class="profile-badge" style="color:var(--dash-red);border-color:var(--dash-red)">Suspended</span></td><td><a href="404.html" style="color:#3B82F6; margin-right: 12px;">Edit</a><a href="404.html" style="color:#10B981;">Unban</a></td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">#1045</td><td>Sarah Jenkins</td><td>sarah@example.com</td><td>10 Aug 2026</td><td><span class="profile-badge" style="color:var(--dash-primary);border-color:var(--dash-primary)">Active</span></td><td><a href="404.html" style="color:#3B82F6; margin-right: 12px;">Edit</a><a href="404.html" style="color:#EF4444;">Ban</a></td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">#1046</td><td>Mike Ross</td><td>mike@example.com</td><td>05 Aug 2026</td><td><span class="profile-badge" style="color:var(--dash-primary);border-color:var(--dash-primary)">Active</span></td><td><a href="404.html" style="color:#3B82F6; margin-right: 12px;">Edit</a><a href="404.html" style="color:#EF4444;">Ban</a></td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">#1047</td><td>Harvey Specter</td><td>harvey@example.com</td><td>01 Aug 2026</td><td><span class="profile-badge" style="color:var(--dash-primary);border-color:var(--dash-primary)">Active</span></td><td><a href="404.html" style="color:#3B82F6; margin-right: 12px;">Edit</a><a href="404.html" style="color:#EF4444;">Ban</a></td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">#1048</td><td>Rachel Zane</td><td>rachel@example.com</td><td>25 Jul 2026</td><td><span class="profile-badge" style="color:#EAB308;border-color:#EAB308">Pending KYC</span></td><td><a href="404.html" style="color:#3B82F6; margin-right: 12px;">Review</a><a href="404.html" style="color:#EF4444;">Reject</a></td></tr>
+                        <tr><td style="padding: 12px 0;">#1049</td><td>Louis Litt</td><td>louis@example.com</td><td>20 Jul 2026</td><td><span class="profile-badge" style="color:var(--dash-primary);border-color:var(--dash-primary)">Active</span></td><td><a href="404.html" style="color:#3B82F6; margin-right: 12px;">Edit</a><a href="404.html" style="color:#EF4444;">Ban</a></td></tr>
+                    </table>
+                </div>
+                <div style="text-align: center; margin-top: 24px;">
+                    <button onclick="window.location.href='404.html'" class="btn" style="background: transparent; color: var(--dash-text); border: 1px solid var(--dash-border); padding: 8px 16px; border-radius: 8px;">Load More Users</button>
+                </div>
+            </div>
+            
+            <h3 style="margin-bottom: 16px;">User Demographics Overview</h3>
+            <div class="stats-grid" style="grid-template-columns: 1fr 1fr;">
+                <div class="chart-card">
+                    <h4 style="margin-bottom: 16px; color: var(--dash-text);">Signups by Region</h4>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;"><span>North America</span><strong>45%</strong></div>
+                    <div style="width: 100%; height: 6px; background: var(--dash-border); border-radius: 3px; margin-bottom: 16px;"><div style="width: 45%; height: 100%; background: var(--dash-primary); border-radius: 3px;"></div></div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;"><span>Europe</span><strong>30%</strong></div>
+                    <div style="width: 100%; height: 6px; background: var(--dash-border); border-radius: 3px; margin-bottom: 16px;"><div style="width: 30%; height: 100%; background: #3B82F6; border-radius: 3px;"></div></div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;"><span>Asia Pacific</span><strong>25%</strong></div>
+                    <div style="width: 100%; height: 6px; background: var(--dash-border); border-radius: 3px; margin-bottom: 16px;"><div style="width: 25%; height: 100%; background: #F59E0B; border-radius: 3px;"></div></div>
+                </div>
+                <div class="chart-card">
+                    <h4 style="margin-bottom: 16px; color: var(--dash-text);">Account Types</h4>
+                    <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--dash-border);"><span>Retail Banking</span><strong>1,850 Users</strong></div>
+                    <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--dash-border);"><span>Premium Wealth</span><strong>540 Users</strong></div>
+                    <div style="display: flex; justify-content: space-between; padding: 12px 0;"><span>Corporate Accounts</span><strong>158 Users</strong></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loans View -->
+        <div id="loans" class="dashboard-view" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                <h2>Loan Applications & Underwriting</h2>
+                <button onclick="window.location.href='404.html'" class="btn btn-export">Generate Risk Report</button>
+            </div>
+            
+            <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 24px;">
+                <div class="stat-card" style="border-left: 4px solid #EAB308;"><h3>Pending Review</h3><h2>28</h2><p class="text-muted">Requires manual UW</p></div>
+                <div class="stat-card" style="border-left: 4px solid #10B981;"><h3>Approved This Month</h3><h2>145</h2><p class="text-muted">₹15.4Cr Disbursed</p></div>
+                <div class="stat-card" style="border-left: 4px solid #EF4444;"><h3>Default Rate</h3><h2>1.2%</h2><p class="stat-trend trend-down">Healthy (< 2%)</p></div>
+            </div>
+
+            <h3 style="margin-bottom: 16px;">Action Queue</h3>
+            <div class="chart-card" style="margin-bottom: 32px;">
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; text-align: left; border-collapse: collapse; min-width: 800px;">
+                        <tr style="border-bottom: 1px solid var(--dash-border);"><th style="padding: 12px 0;">App ID</th><th style="padding: 12px 0;">Applicant</th><th style="padding: 12px 0;">Type</th><th style="padding: 12px 0;">Amount</th><th style="padding: 12px 0;">Risk Score</th><th style="padding: 12px 0;">Status</th><th style="padding: 12px 0;">Action</th></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">LA-902</td><td>Sarah Jenkins</td><td>Home Loan</td><td>₹75,00,000</td><td><span style="color:#10B981;">Low (820)</span></td><td><span class="profile-badge" style="color:#EAB308;border-color:#EAB308">Pending</span></td><td><button onclick="window.location.href='404.html'" style="padding: 4px 8px; background:var(--dash-primary); color:white; border:none; border-radius:4px; cursor:pointer; margin-right:8px;">Approve</button><button onclick="window.location.href='404.html'" style="padding: 4px 8px; background:transparent; color:var(--dash-text); border:1px solid var(--dash-border); border-radius:4px; cursor:pointer;">Review</button></td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">LA-904</td><td>Harvey Specter</td><td>Business Loan</td><td>₹2,50,00,000</td><td><span style="color:#EAB308;">Medium (710)</span></td><td><span class="profile-badge" style="color:#EAB308;border-color:#EAB308">Under Review</span></td><td><button onclick="window.location.href='404.html'" style="padding: 4px 8px; background:var(--dash-primary); color:white; border:none; border-radius:4px; cursor:pointer; margin-right:8px;">Approve</button><button onclick="window.location.href='404.html'" style="padding: 4px 8px; background:transparent; color:var(--dash-text); border:1px solid var(--dash-border); border-radius:4px; cursor:pointer;">Review</button></td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">LA-905</td><td>Jessica Pearson</td><td>Personal Loan</td><td>₹10,00,000</td><td><span style="color:#10B981;">Low (785)</span></td><td><span class="profile-badge" style="color:#EAB308;border-color:#EAB308">Pending</span></td><td><button onclick="window.location.href='404.html'" style="padding: 4px 8px; background:var(--dash-primary); color:white; border:none; border-radius:4px; cursor:pointer; margin-right:8px;">Approve</button><button onclick="window.location.href='404.html'" style="padding: 4px 8px; background:transparent; color:var(--dash-text); border:1px solid var(--dash-border); border-radius:4px; cursor:pointer;">Review</button></td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">LA-906</td><td>Donna Paulsen</td><td>Auto Loan</td><td>₹15,00,000</td><td><span style="color:#EF4444;">High (590)</span></td><td><span class="profile-badge" style="color:#EAB308;border-color:#EAB308">Under Review</span></td><td><button onclick="window.location.href='404.html'" style="padding: 4px 8px; background:#EF4444; color:white; border:none; border-radius:4px; cursor:pointer; margin-right:8px;">Reject</button><button onclick="window.location.href='404.html'" style="padding: 4px 8px; background:transparent; color:var(--dash-text); border:1px solid var(--dash-border); border-radius:4px; cursor:pointer;">Review</button></td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">LA-899</td><td>Mike Ross</td><td>Personal Loan</td><td>₹5,00,000</td><td><span style="color:#10B981;">Low (810)</span></td><td><span class="profile-badge" style="color:var(--dash-primary);border-color:var(--dash-primary)">Approved</span></td><td><span class="text-muted">Disbursed</span></td></tr>
+                        <tr><td style="padding: 12px 0;">LA-898</td><td>Louis Litt</td><td>Business Loan</td><td>₹50,00,000</td><td><span style="color:#10B981;">Low (795)</span></td><td><span class="profile-badge" style="color:var(--dash-primary);border-color:var(--dash-primary)">Approved</span></td><td><span class="text-muted">Disbursed</span></td></tr>
+                    </table>
+                </div>
+            </div>
+            
+            <h3 style="margin-bottom: 16px;">Loan Performance</h3>
+            <div class="chart-card" style="display: flex; gap: 40px; align-items: center; background: linear-gradient(45deg, #1F2937, #0B0F19);">
+                <div style="flex: 1;">
+                    <h4 style="font-size: 1.2rem; margin-bottom: 8px;">AI Underwriting Engine</h4>
+                    <p class="text-muted" style="margin-bottom: 16px;">Auto-approval rate is currently at 65%. Manual review queue is operating within the 24-hour SLA.</p>
+                    <button onclick="window.location.href='404.html'" class="btn" style="background: transparent; color: var(--dash-text); border: 1px solid var(--dash-border); padding: 8px 16px; border-radius: 8px;">Configure AI Rules</button>
+                </div>
+                <div style="width: 150px; height: 150px; border-radius: 50%; border: 12px solid var(--dash-primary); display: flex; align-items: center; justify-content: center; border-left-color: #374151;">
+                    <div style="text-align: center;">
+                        <h2 style="color: white; margin: 0;">65%</h2>
+                        <span class="text-muted" style="font-size: 0.8rem;">Auto-Approved</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Documents View -->
+        <div id="documents" class="dashboard-view" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                <h2>Document Library & Compliance</h2>
+                <button onclick="window.location.href='404.html'" class="btn btn-export"><i class="fa-solid fa-upload"></i> Upload Document</button>
+            </div>
+            
+            <div class="admin-stats-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 40px;">
+                <div class="admin-stat-card" style="text-align:center; transition: transform 0.3s; cursor: pointer;">
+                    <i class="fa-solid fa-file-pdf" style="font-size: 3rem; color: #EF4444; margin-bottom: 16px;"></i>
+                    <h4>Q3 Audit Report.pdf</h4>
+                    <p class="text-muted" style="font-size:0.8rem; margin-top:8px;">Uploaded 2 days ago</p>
+                </div>
+                <div class="admin-stat-card" style="text-align:center; transition: transform 0.3s; cursor: pointer;">
+                    <i class="fa-solid fa-file-excel" style="font-size: 3rem; color: #10B981; margin-bottom: 16px;"></i>
+                    <h4>User_Data_Export.xlsx</h4>
+                    <p class="text-muted" style="font-size:0.8rem; margin-top:8px;">Uploaded today</p>
+                </div>
+                <div class="admin-stat-card" style="text-align:center; transition: transform 0.3s; cursor: pointer;">
+                    <i class="fa-solid fa-file-word" style="font-size: 3rem; color: #3B82F6; margin-bottom: 16px;"></i>
+                    <h4>Compliance_Policy.docx</h4>
+                    <p class="text-muted" style="font-size:0.8rem; margin-top:8px;">Uploaded last week</p>
+                </div>
+                <div class="admin-stat-card" style="text-align:center; transition: transform 0.3s; cursor: pointer;">
+                    <i class="fa-solid fa-file-shield" style="font-size: 3rem; color: #F59E0B; margin-bottom: 16px;"></i>
+                    <h4>RBI_Guidelines_2026.pdf</h4>
+                    <p class="text-muted" style="font-size:0.8rem; margin-top:8px;">Uploaded 1 month ago</p>
+                </div>
+                <div class="admin-stat-card" style="text-align:center; transition: transform 0.3s; cursor: pointer;">
+                    <i class="fa-solid fa-file-pdf" style="font-size: 3rem; color: #EF4444; margin-bottom: 16px;"></i>
+                    <h4>Tax_Filing_Corporate.pdf</h4>
+                    <p class="text-muted" style="font-size:0.8rem; margin-top:8px;">Uploaded 3 months ago</p>
+                </div>
+                <div class="admin-stat-card" style="text-align:center; transition: transform 0.3s; cursor: pointer;">
+                    <i class="fa-solid fa-file-csv" style="font-size: 3rem; color: #10B981; margin-bottom: 16px;"></i>
+                    <h4>Transaction_Logs_Aug.csv</h4>
+                    <p class="text-muted" style="font-size:0.8rem; margin-top:8px;">Uploaded 1 month ago</p>
+                </div>
+                <div class="admin-stat-card" style="text-align:center; transition: transform 0.3s; cursor: pointer;">
+                    <i class="fa-solid fa-folder-open" style="font-size: 3rem; color: #8B5CF6; margin-bottom: 16px;"></i>
+                    <h4>Employee_Agreements/</h4>
+                    <p class="text-muted" style="font-size:0.8rem; margin-top:8px;">42 Files</p>
+                </div>
+                <div class="admin-stat-card" style="text-align:center; border: 1px dashed var(--dash-muted); background: transparent; display: flex; flex-direction: column; justify-content: center;">
+                    <i class="fa-solid fa-plus" style="font-size: 2rem; color: var(--dash-muted); margin-bottom: 16px;"></i>
+                    <h4 style="color: var(--dash-muted);">Add Folder</h4>
+                </div>
+            </div>
+
+            <h3 style="margin-bottom: 16px;">Recently Archived</h3>
+            <div class="chart-card">
+                <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--dash-border);">
+                    <div style="display: flex; align-items: center; gap: 12px;"><i class="fa-solid fa-file-zipper" style="color: var(--dash-muted);"></i><span>FY24_Financials.zip</span></div>
+                    <button onclick="window.location.href='404.html'" class="btn" style="background: transparent; color: var(--dash-text); border: none; cursor: pointer;">Restore</button>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 12px 0;">
+                    <div style="display: flex; align-items: center; gap: 12px;"><i class="fa-solid fa-file-zipper" style="color: var(--dash-muted);"></i><span>Old_KYC_Records_Batch1.zip</span></div>
+                    <button onclick="window.location.href='404.html'" class="btn" style="background: transparent; color: var(--dash-text); border: none; cursor: pointer;">Restore</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reports View -->
+        <div id="reports" class="dashboard-view" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                <h2>Financial & System Reports</h2>
+                <button onclick="window.location.href='404.html'" class="btn btn-export">Generate Custom Report</button>
+            </div>
+            
+            <div class="stats-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 32px;">
+                <div class="chart-card" style="text-align: center; padding: 40px 20px;">
+                    <i class="fa-solid fa-chart-pie" style="font-size: 3rem; color: var(--dash-primary); margin-bottom: 16px;"></i>
+                    <h3 style="margin-bottom: 8px;">Quarterly Revenue</h3>
+                    <p class="text-muted" style="margin-bottom: 24px;">Comprehensive breakdown of platform fees and loan interest.</p>
+                    <button onclick="window.location.href='404.html'" class="btn" style="background: transparent; border: 1px solid var(--dash-primary); color: var(--dash-primary); padding: 8px 24px; border-radius: 8px;">Download PDF</button>
+                </div>
+                <div class="chart-card" style="text-align: center; padding: 40px 20px;">
+                    <i class="fa-solid fa-server" style="font-size: 3rem; color: #3B82F6; margin-bottom: 16px;"></i>
+                    <h3 style="margin-bottom: 8px;">System Uptime & Health</h3>
+                    <p class="text-muted" style="margin-bottom: 24px;">Server logs, API latency, and database performance metrics.</p>
+                    <button onclick="window.location.href='404.html'" class="btn" style="background: transparent; border: 1px solid #3B82F6; color: #3B82F6; padding: 8px 24px; border-radius: 8px;">View Dashboard</button>
+                </div>
+            </div>
+
+            <h3 style="margin-bottom: 16px;">Automated Scheduled Reports</h3>
+            <div class="chart-card">
+                <table style="width: 100%; text-align: left; border-collapse: collapse;">
+                    <tr style="border-bottom: 1px solid var(--dash-border);"><th style="padding: 12px 0;">Report Name</th><th style="padding: 12px 0;">Frequency</th><th style="padding: 12px 0;">Recipients</th><th style="padding: 12px 0;">Status</th></tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">Daily Transaction Summary</td><td>Daily at 12:00 AM</td><td>finance@finora.com</td><td><span style="color:#10B981;">Active</span></td></tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">Weekly Risk Assessment</td><td>Every Monday</td><td>risk@finora.com</td><td><span style="color:#10B981;">Active</span></td></tr>
+                    <tr><td style="padding: 12px 0;">Monthly Investor Update</td><td>1st of every Month</td><td>investors@finora.com</td><td><span style="color:#EF4444;">Paused</span></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Profile View -->
+        <div id="profile" class="dashboard-view" style="display: none;">
+            <h2 style="margin-bottom: 24px;">Admin Profile & Access Logs</h2>
+            <div class="chart-card" style="display: flex; gap: 40px; align-items: center; margin-bottom: 32px;">
+                <div class="dyn-initial" style="width: 120px; height: 120px; background: #D1FAE5; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #065F46;">A</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div>
+                            <h3 class="dyn-name" style="font-size: 1.8rem; margin-bottom: 8px;">Super Admin</h3>
+                            <p class="text-muted" style="margin-bottom: 4px;"><i class="fa-solid fa-envelope" style="width: 20px;"></i> <span class="dyn-email">admin@finora.com</span></p>
+                            <p class="text-muted" style="margin-bottom: 16px;"><i class="fa-solid fa-shield-halved" style="width: 20px;"></i> Root Privileges (All Access)</p>
+                        </div>
+                        <button onclick="window.location.href='404.html'" class="btn btn-export" style="background: transparent; color: var(--dash-text); border: 1px solid var(--dash-border);">Change Password</button>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="margin-bottom: 16px;">Recent Admin Activity</h3>
+            <div class="chart-card">
+                <div style="display: flex; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid var(--dash-border);">
+                    <div><h4 style="margin-bottom: 4px;">Approved Loan LA-899</h4><p class="text-muted" style="font-size: 0.85rem;">For user Mike Ross</p></div>
+                    <span class="text-muted" style="font-size: 0.85rem;">Today, 10:45 AM</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid var(--dash-border);">
+                    <div><h4 style="margin-bottom: 4px;">Modified AI Underwriting Rules</h4><p class="text-muted" style="font-size: 0.85rem;">Increased auto-approval threshold to 750</p></div>
+                    <span class="text-muted" style="font-size: 0.85rem;">Yesterday, 14:20 PM</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid var(--dash-border);">
+                    <div><h4 style="margin-bottom: 4px;">System Login</h4><p class="text-muted" style="font-size: 0.85rem;">IP: 192.168.1.45 (Mumbai, India)</p></div>
+                    <span class="text-muted" style="font-size: 0.85rem;">Yesterday, 09:00 AM</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 16px 0;">
+                    <div><h4 style="margin-bottom: 4px;">Exported User Data</h4><p class="text-muted" style="font-size: 0.85rem;">Downloaded User_Data_Export.xlsx</p></div>
+                    <span class="text-muted" style="font-size: 0.85rem;">22 Sep 2026, 16:30 PM</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings View -->
+        <div id="settings" class="dashboard-view" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                <h2>Platform Settings & Integrations</h2>
+                <button onclick="window.location.href='404.html'" class="btn btn-export">Save Changes</button>
+            </div>
+            
+            <div class="stats-grid" style="grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px;">
+                <div class="chart-card">
+                    <h3 style="margin-bottom: 16px;">Core Operations</h3>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--dash-border);">
+                        <div><h4>Maintenance Mode</h4><p class="text-muted" style="font-size: 0.85rem;">Take platform offline</p></div>
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--dash-border);">
+                        <div><h4>Auto-Approve Micro Loans</h4><p class="text-muted" style="font-size: 0.85rem;">Instantly approve < ₹50k</p></div>
+                        <input type="checkbox" checked style="width: 20px; height: 20px;">
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0;">
+                        <div><h4>System Backups</h4><p class="text-muted" style="font-size: 0.85rem;">Daily cold storage backups</p></div>
+                        <input type="checkbox" checked style="width: 20px; height: 20px;">
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <h3 style="margin-bottom: 16px;">API & Webhooks</h3>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--dash-border);">
+                        <div><h4 style="font-family: monospace;">sk_live_98x...3j9</h4><p class="text-muted" style="font-size: 0.85rem;">Primary Production API Key</p></div>
+                        <button onclick="window.location.href='404.html'" class="btn" style="background: transparent; border: 1px solid var(--dash-border); color: var(--dash-text); padding: 4px 12px; border-radius: 4px;">Revoke</button>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--dash-border);">
+                        <div><h4 style="font-family: monospace;">https://finora.com/webhook</h4><p class="text-muted" style="font-size: 0.85rem;">Payment Gateway Webhook</p></div>
+                        <button onclick="window.location.href='404.html'" class="btn" style="background: transparent; border: 1px solid var(--dash-border); color: var(--dash-text); padding: 4px 12px; border-radius: 4px;">Edit</button>
+                    </div>
+                    <button onclick="window.location.href='404.html'" class="btn btn-export" style="width: 100%; margin-top: 16px; background: transparent; border: 1px dashed var(--dash-muted); color: var(--dash-text);">+ Generate New API Key</button>
+                </div>
+            </div>
+            
+            <h3 style="margin-bottom: 16px;">Danger Zone</h3>
+            <div class="chart-card" style="border: 1px solid #EF4444; background: rgba(239, 68, 68, 0.05);">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <h4 style="color: #EF4444; margin-bottom: 4px;">Wipe Database (Factory Reset)</h4>
+                        <p class="text-muted" style="font-size: 0.9rem;">Permanently deletes all users, loans, and transaction history. Cannot be undone.</p>
+                    </div>
+                    <button onclick="window.location.href='404.html'" class="btn" style="background: #EF4444; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold;">Wipe System Data</button>
+                </div>
+            </div>
+        </div>
+
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        Chart.defaults.color = '#9CA3AF';
-        Chart.defaults.font.family = 'Inter';
+        document.addEventListener('DOMContentLoaded', () => {
+            if(typeof Chart === 'undefined') return;
+            
+            Chart.defaults.color = '#9CA3AF';
+            Chart.defaults.font.family = 'Inter';
 
-        // Bar Chart (User Growth)
-        const ctxGrowth = document.getElementById('growthChart').getContext('2d');
-        new Chart(ctxGrowth, {
-            type: 'bar',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                datasets: [{
-                    label: 'New Users',
-                    data: [30, 45, 60, 50, 75, 70],
-                    backgroundColor: '#00A86B',
-                    borderRadius: 4,
-                    barThickness: 24
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { display: false }
-                },
-                scales: {
-                    y: {
-                        display: false,
-                        beginAtZero: true
+            // Bar Chart (User Growth)
+            const ctxGrowth = document.getElementById('growthChart');
+            if(ctxGrowth) {
+                new Chart(ctxGrowth.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                        datasets: [{
+                            label: 'New Users',
+                            data: [300, 450, 400, 600, 550, 800],
+                            backgroundColor: '#10B981',
+                            borderRadius: 4
+                        }]
                     },
-                    x: {
-                        grid: { display: false, drawBorder: false }
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        scales: {
+                            y: { display: false, beginAtZero: true },
+                            x: { grid: { display: false, color: 'rgba(255,255,255,0.05)' } }
+                        }
                     }
-                }
+                });
             }
-        });
 
-        // Doughnut Chart (Loan Statistics)
-        const ctxLoan = document.getElementById('loanDoughnut').getContext('2d');
-        new Chart(ctxLoan, {
-            type: 'doughnut',
-            data: {
-                labels: ['Personal', 'Home', 'Business'],
-                datasets: [{
-                    data: [45, 28.6, 26.4],
-                    backgroundColor: ['#00A86B', '#8B5CF6', '#F59E0B'],
-                    borderWidth: 0,
-                    cutout: '70%'
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { display: false }
-                }
+            // Doughnut Chart (Loan Statistics)
+            const ctxLoan = document.getElementById('loanDoughnut');
+            if(ctxLoan) {
+                new Chart(ctxLoan.getContext('2d'), {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Personal Loans', 'Home Loans', 'Business Loans'],
+                        datasets: [{
+                            data: [45, 28.6, 26.4],
+                            backgroundColor: ['#10B981', '#8B5CF6', '#F59E0B'],
+                            borderWidth: 0,
+                            cutout: '75%'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false }
+                        }
+                    }
+                });
             }
         });
     </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.sidebar-nav .nav-link');
+            const views = document.querySelectorAll('.dashboard-view');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('data-target');
+                    if(!targetId) return;
+                    
+                    // Update active class on nav
+                    navLinks.forEach(n => n.classList.remove('active'));
+                    link.classList.add('active');
+                    
+                    // Find current and next view
+                    const currentView = document.querySelector('.dashboard-view.active');
+                    const nextView = document.getElementById(targetId);
+                    
+                    if(currentView === nextView) return;
+                    
+                    // GSAP Animation
+                    if (typeof gsap !== 'undefined') {
+                        gsap.to(currentView, {
+                            opacity: 0, 
+                            y: -20, 
+                            duration: 0.3, 
+                            onComplete: () => {
+                                currentView.classList.remove('active');
+                                currentView.style.display = 'none';
+                                
+                                nextView.style.display = 'block';
+                                nextView.classList.add('active');
+                                gsap.fromTo(nextView, 
+                                    { opacity: 0, y: 20 }, 
+                                    { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }
+                                );
+                            }
+                        });
+                    } else {
+                        // Fallback if GSAP fails to load
+                        currentView.classList.remove('active');
+                        currentView.style.display = 'none';
+                        nextView.style.display = 'block';
+                        nextView.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const savedEmail = localStorage.getItem('finora_user_email');
+        const savedName = localStorage.getItem('finora_user_name');
+        
+        if(savedEmail && savedName) {
+            const firstName = savedName.split(' ')[0] + '!';
+            const initial = savedName.charAt(0).toUpperCase();
+            
+            document.querySelectorAll('.dyn-name').forEach(el => el.textContent = savedName);
+            document.querySelectorAll('.dyn-email').forEach(el => el.textContent = savedEmail);
+            document.querySelectorAll('.dyn-first-name').forEach(el => el.textContent = firstName);
+            document.querySelectorAll('.dyn-initial').forEach(el => el.textContent = initial);
+        }
+    });
+</script>
+
+    <script src="JS/sidebar-toggle.js"></script>
 </body>
 </html>
