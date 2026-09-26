@@ -6,42 +6,6 @@
 /* Sidebar Toggle Button (hidden on desktop) */
 .sidebar-toggle {
     display: none;
-    position: fixed;
-    top: 16px;
-    left: 16px;
-    z-index: 1100;
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    border: 1px solid var(--dash-border);
-    background: var(--dash-sidebar);
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 5px;
-    padding: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
-.sidebar-toggle span {
-    display: block;
-    height: 2px;
-    width: 100%;
-    background: var(--dash-text, #F9FAFB);
-    border-radius: 2px;
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    transform-origin: center;
-}
-/* X animation for sidebar toggle */
-.sidebar-toggle.active span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-}
-.sidebar-toggle.active span:nth-child(2) {
-    opacity: 0;
-    transform: scaleX(0);
-}
-.sidebar-toggle.active span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
 }
 
 /* Dashboard overlay */
@@ -79,44 +43,118 @@
 
 /* ========== MOBILE (768px) ========== */
 @media (max-width: 768px) {
-    /* Show sidebar toggle button */
-    .sidebar-toggle {
-        display: flex;
+    /* Main Content Padding for Fixed Topbar */
+    .main-content {
+        margin-left: 0 !important;
+        padding: 90px 16px 24px 16px !important;
+        width: 100% !important;
     }
 
-    /* Sidebar becomes off-canvas drawer */
+    /* Fixed Mobile Topbar */
+    .topbar {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 70px;
+        background: var(--dash-sidebar) !important;
+        z-index: 1040;
+        padding: 0 16px !important;
+        margin: 0 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* Hide desktop title */
+    .topbar h2 {
+        display: none !important;
+    }
+
+    /* Topbar Right - align bell and profile */
+    .topbar-right {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 16px !important;
+        width: auto !important;
+        justify-content: flex-end !important;
+    }
+    .topbar-right .dyn-name { display: none !important; } /* Hide name on mobile */
+
+    /* The Hamburger Button */
+    .sidebar-toggle {
+        display: flex;
+        position: relative;
+        width: 44px;
+        height: 44px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+        padding: 5px;
+        margin-right: auto;
+    }
+    .sidebar-toggle span {
+        display: block;
+        height: 2px;
+        width: 24px;
+        background: #F9FAFB;
+        border-radius: 2px;
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        transform-origin: center;
+    }
+    
+    /* Inject Logo next to Hamburger */
+    .sidebar-toggle::after {
+        content: '';
+        display: inline-block;
+        width: 120px;
+        height: 28px;
+        background: url('../assets/logos.webp') no-repeat left center;
+        background-size: contain;
+        position: absolute;
+        left: 50px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+
+    /* X animation */
+    .sidebar-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .sidebar-toggle.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .sidebar-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Sidebar Drawer (Partial Width) */
     .sidebar {
         position: fixed !important;
-        left: -100% !important;
+        left: -280px !important;
         top: 0 !important;
-        width: 100% !important;
+        width: 280px !important;
         height: 100vh !important;
         z-index: 1050 !important;
         transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        background: var(--dash-sidebar) !important;
+        border-right: 1px solid rgba(255,255,255,0.05) !important;\n        transform: none !important;
     }
     .sidebar.mobile-open {
         left: 0 !important;
     }
-
-    /* Main content takes full width */
-    .main-content {
-        margin-left: 0 !important;
-        padding: 80px 16px 24px 16px !important;
-        width: 100% !important;
+    
+    /* Better styling for active links in mobile (matching desktop) */
+    .nav-link.active {
+        background: var(--dash-primary) !important;
+        color: white !important;
+        border-radius: 8px !important;
+        box-shadow: 0 4px 12px rgba(0,168,107,0.3) !important;
     }
 
-    /* Topbar adjustments */
-    .topbar {
-        flex-direction: column;
-        gap: 16px;
-        align-items: flex-start;
-    }
-    .topbar-right {
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    /* Stats grid single column */
+    /* Reset grids */
     .stats-grid, .admin-stats-grid {
         grid-template-columns: 1fr !important;
     }
@@ -124,21 +162,25 @@
         grid-template-columns: 1fr !important;
     }
 
-    /* Hero banner */
+    /* Hero Banner Mobile */
     .dash-hero {
         height: auto !important;
         min-height: 200px !important;
+        border-radius: 20px !important;
+        margin-bottom: 24px !important;
     }
     .dash-hero-content {
         flex-direction: column !important;
         gap: 16px;
-        padding: 24px !important;
+        padding: 30px 24px !important;
+        text-align: left;
+        align-items: flex-start;
     }
     .dash-hero h1 {
         font-size: 1.8rem !important;
+        margin-bottom: 8px !important;
     }
 
-    /* Admin overview header */
     .overview-header {
         flex-direction: column !important;
         gap: 16px;
@@ -149,43 +191,20 @@
         width: 100%;
     }
 
-    /* Tables scroll horizontally */
-    .chart-card {
-        overflow-x: auto;
-    }
-    table {
-        min-width: 500px;
-    }
-
-    /* Profile views */
-    .chart-card[style*="display: flex"][style*="gap: 40px"] {
-        flex-direction: column !important;
-        text-align: center;
-    }
+    .chart-card { overflow-x: auto; }
+    table { min-width: 500px; }
 }
 
 /* ========== SMALL MOBILE (480px) ========== */
 @media (max-width: 480px) {
-    .main-content {
-        padding: 72px 12px 24px 12px !important;
-    }
-    .topbar h2 {
-        font-size: 1rem;
-    }
-    .stat-card h2, .admin-stat-card h2 {
-        font-size: 1.5rem;
-    }
-    .dash-hero h1 {
-        font-size: 1.5rem !important;
-    }
-    .dash-hero h1 span {
-        font-size: 1.5rem !important;
-    }
-    .chart-card {
-        padding: 16px !important;
-    }
-    .btn, .btn-export {
-        font-size: 0.85rem !important;
-        padding: 8px 16px !important;
+    .main-content { padding: 90px 12px 24px 12px !important; }
+    .stat-card h2, .admin-stat-card h2 { font-size: 1.5rem; }
+    .dash-hero h1 { font-size: 1.5rem !important; }
+    .dash-hero h1 span { font-size: 1.5rem !important; }
+    .chart-card { padding: 16px !important; }
+    .btn, .btn-export { font-size: 0.85rem !important; padding: 8px 16px !important; }
+    
+    .sidebar-toggle::after {
+        width: 100px; /* slightly smaller logo on small screens */
     }
 }

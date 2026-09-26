@@ -417,3 +417,54 @@ p { font-size: 1.1rem; color: #475569; line-height: 1.6; }
     position: relative;
     z-index: 2;
 }
+
+/* =========================================
+   Marquee Animation for Ecosystem Section
+   ========================================= */
+.marquee-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    display: flex;
+    padding: 20px 0;
+}
+
+/* Fade masks on the edges */
+.marquee-wrapper::before, .marquee-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+.marquee-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, var(--background-light), transparent);
+}
+.marquee-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, var(--background-light), transparent);
+}
+
+.marquee-track {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    animation: marquee-scroll 25s linear infinite;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Translate exactly half of the track minus half a gap to perfectly loop */
+        transform: translateX(calc(-50% - 15px));
+    }
+}

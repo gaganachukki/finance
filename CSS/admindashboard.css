@@ -162,14 +162,7 @@
     justify-content: center;
 }
 
-/* Responsive Overrides */
-@media (max-width: 1200px) {
-    .admin-stats-grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 768px) {
-    .admin-stats-grid { grid-template-columns: 1fr; }
-    .admin-header { flex-direction: column; align-items: flex-start; gap: 16px; }
-}
+/* Responsive logic handled in dashboard-responsive.css */
 
 /* ---------- DASHBOARD BUTTON SYSTEM ---------- */
 .btn {

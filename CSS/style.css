@@ -326,3 +326,34 @@ h3 { font-size: 1.5rem; }
     font-weight: 500;
 }
 .btn-login:hover { background-color: #000; transform: none; box-shadow: none; }
+
+
+/* =========================================
+   Global FAQ Accordion
+   ========================================= */
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+    margin-top: 0;
+}
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 12px;
+}
+.faq-item .fa-chevron-down {
+    transition: transform 0.3s ease;
+}
+.faq-item.active .fa-chevron-down {
+    transform: rotate(180deg);
+}

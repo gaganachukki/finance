@@ -25,15 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            // Basic validation is handled by HTML5 required attribute
-            // We just show success message since there's no backend
-            
-            successMsg.style.display = 'block';
-            form.reset();
-            
-            setTimeout(() => {
-                successMsg.style.display = 'none';
-            }, 5000);
+            // Redirect to 404 page as requested by user
+            window.location.href = '404.html';
         });
     }
 });

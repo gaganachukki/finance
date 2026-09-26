@@ -43,13 +43,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Insurance Section
     gsap.from(".insurance-pill", {
-        scrollTrigger: { trigger: ".insurance-section", start: "top 85%" },
-        scale: 0.8, opacity: 0, duration: 0.5, stagger: 0.1, ease: "back.out(2)"
+        scrollTrigger: { trigger: ".insurance-section", start: "top 90%" },
+        scale: 0.85, opacity: 0, duration: 0.5, stagger: 0.08, ease: "back.out(1.7)",
+        immediateRender: false,
+        clearProps: "all"
+    });
+
+    gsap.from(".insurance-card", {
+        scrollTrigger: { trigger: ".insurance-grid", start: "top 90%" },
+        y: 40, opacity: 0, duration: 0.7, stagger: 0.15, ease: "power2.out",
+        immediateRender: false,
+        clearProps: "all"
+    });
+
+    gsap.from(".insurance-trust-bar", {
+        scrollTrigger: { trigger: ".insurance-trust-bar", start: "top 95%" },
+        y: 30, opacity: 0, duration: 0.6, ease: "power2.out",
+        immediateRender: false,
+        clearProps: "all"
     });
 
     // Process Section
     gsap.from(".process-step", {
         scrollTrigger: { trigger: ".process-section", start: "top 75%" },
-        y: 50, opacity: 0, duration: 0.8, stagger: 0.25, ease: "power2.out"
+        y: 50, opacity: 0, duration: 0.8, stagger: 0.25, ease: "power2.out",
+        clearProps: "all"
+    });
+
+    // Refresh ScrollTrigger when images load to prevent calculation offset
+    window.addEventListener("load", () => {
+        ScrollTrigger.refresh();
+    });
+
+    // Interactive Pill Selection
+    const pills = document.querySelectorAll(".insurance-pill");
+    pills.forEach(pill => {
+        pill.addEventListener("click", () => {
+            pills.forEach(p => p.classList.remove("active"));
+            pill.classList.add("active");
+        });
     });
 });

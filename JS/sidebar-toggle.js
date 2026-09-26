@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         toggle.className = 'sidebar-toggle';
         toggle.setAttribute('aria-label', 'Toggle Sidebar');
         toggle.innerHTML = '<span></span><span></span><span></span>';
-        document.body.appendChild(toggle);
+        const topbar = document.querySelector('.topbar'); if(topbar) { topbar.insertBefore(toggle, topbar.firstChild); } else { document.body.appendChild(toggle); }
     }
 
     // Create overlay
