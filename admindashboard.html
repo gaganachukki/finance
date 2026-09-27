@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - FINORA</title>
+    <title>Admin Dashboard - STACKLY</title>
     <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,14 +16,14 @@
     <!-- Sidebar -->
     <aside class="sidebar">
         <div class="sidebar-logo">
-            <a href="index.html"><img src="assets/logos.webp" alt="FINORA"></a>
+            <a href="index.html"><img src="assets/logos.webp" alt="STACKLY"></a>
         </div>
         
         <div class="sidebar-profile">
             <div class="profile-avatar avatar-light-green">A</div>
             <div class="profile-info">
                 <h4>Admin <i class="fa-solid fa-circle-check" style="color: var(--dash-primary); font-size: 0.8rem; margin-left: 4px;"></i></h4>
-                <p class="dyn-email"><span class="dyn-email">admin@finora.com</span></p>
+                <p class="dyn-email"><span class="dyn-email">admin@stackly.com</span></p>
                 <span class="profile-badge">SUPER ADMIN</span>
             </div>
         </div>
@@ -368,9 +368,9 @@
             <div class="chart-card">
                 <table style="width: 100%; text-align: left; border-collapse: collapse;">
                     <tr style="border-bottom: 1px solid var(--dash-border);"><th style="padding: 12px 0;">Report Name</th><th style="padding: 12px 0;">Frequency</th><th style="padding: 12px 0;">Recipients</th><th style="padding: 12px 0;">Status</th></tr>
-                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">Daily Transaction Summary</td><td>Daily at 12:00 AM</td><td>finance@finora.com</td><td><span style="color:#10B981;">Active</span></td></tr>
-                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">Weekly Risk Assessment</td><td>Every Monday</td><td>risk@finora.com</td><td><span style="color:#10B981;">Active</span></td></tr>
-                    <tr><td style="padding: 12px 0;">Monthly Investor Update</td><td>1st of every Month</td><td>investors@finora.com</td><td><span style="color:#EF4444;">Paused</span></td></tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">Daily Transaction Summary</td><td>Daily at 12:00 AM</td><td>finance@stackly.com</td><td><span style="color:#10B981;">Active</span></td></tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">Weekly Risk Assessment</td><td>Every Monday</td><td>risk@stackly.com</td><td><span style="color:#10B981;">Active</span></td></tr>
+                    <tr><td style="padding: 12px 0;">Monthly Investor Update</td><td>1st of every Month</td><td>investors@stackly.com</td><td><span style="color:#EF4444;">Paused</span></td></tr>
                 </table>
             </div>
         </div>
@@ -384,7 +384,7 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div>
                             <h3 class="dyn-name" style="font-size: 1.8rem; margin-bottom: 8px;">Super Admin</h3>
-                            <p class="text-muted" style="margin-bottom: 4px;"><i class="fa-solid fa-envelope" style="width: 20px;"></i> <span class="dyn-email">admin@finora.com</span></p>
+                            <p class="text-muted" style="margin-bottom: 4px;"><i class="fa-solid fa-envelope" style="width: 20px;"></i> <span class="dyn-email">admin@stackly.com</span></p>
                             <p class="text-muted" style="margin-bottom: 16px;"><i class="fa-solid fa-shield-halved" style="width: 20px;"></i> Root Privileges (All Access)</p>
                         </div>
                         <button onclick="window.location.href='404.html'" class="btn btn-export" style="background: transparent; color: var(--dash-text); border: 1px solid var(--dash-border);">Change Password</button>
@@ -444,7 +444,7 @@
                         <button onclick="window.location.href='404.html'" class="btn" style="background: transparent; border: 1px solid var(--dash-border); color: var(--dash-text); padding: 4px 12px; border-radius: 4px;">Revoke</button>
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--dash-border);">
-                        <div><h4 style="font-family: monospace;">https://finora.com/webhook</h4><p class="text-muted" style="font-size: 0.85rem;">Payment Gateway Webhook</p></div>
+                        <div><h4 style="font-family: monospace;">https://stackly.com/webhook</h4><p class="text-muted" style="font-size: 0.85rem;">Payment Gateway Webhook</p></div>
                         <button onclick="window.location.href='404.html'" class="btn" style="background: transparent; border: 1px solid var(--dash-border); color: var(--dash-text); padding: 4px 12px; border-radius: 4px;">Edit</button>
                     </div>
                     <button onclick="window.location.href='404.html'" class="btn btn-export" style="width: 100%; margin-top: 16px; background: transparent; border: 1px dashed var(--dash-muted); color: var(--dash-text);">+ Generate New API Key</button>
@@ -581,8 +581,8 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const savedEmail = localStorage.getItem('finora_user_email');
-        const savedName = localStorage.getItem('finora_user_name');
+        const savedEmail = localStorage.getItem('stackly_user_email');
+        const savedName = localStorage.getItem('stackly_user_name');
         
         if(savedEmail && savedName) {
             const firstName = savedName.split(' ')[0] + '!';

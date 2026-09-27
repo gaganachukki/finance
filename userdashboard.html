@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Dashboard - FINORA</title>
+    <title>User Dashboard - STACKLY</title>
     <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
     <!-- Sidebar -->
     <aside class="sidebar">
         <div class="sidebar-logo">
-            <a href="index.html"><img src="assets/logos.webp" alt="FINORA"></a>
+            <a href="index.html"><img src="assets/logos.webp" alt="STACKLY"></a>
         </div>
         
         <div class="sidebar-profile">
@@ -58,7 +58,7 @@
     <main class="main-content">
         <!-- Topbar -->
         <header class="topbar">
-            <h2>FINORA Financial Portal</h2>
+            <h2>STACKLY Financial Portal</h2>
             <div class="topbar-right">
                 <div style="width: 8px; height: 8px; background: #EF4444; border-radius: 50%; margin-right: 8px;"></div>
                 <div class="user-dropdown">
@@ -462,7 +462,7 @@
                 <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0;">
                     <div style="display: flex; align-items: center; gap: 16px;">
                         <i class="fa-solid fa-mobile-screen" style="font-size: 2rem; color: var(--dash-muted);"></i>
-                        <div><h4 style="font-size: 1.1rem;">iPhone 14 Pro &bull; Finora App</h4><p class="text-muted">Mumbai, India &bull; Last active 2 hours ago</p></div>
+                        <div><h4 style="font-size: 1.1rem;">iPhone 14 Pro &bull; Stackly App</h4><p class="text-muted">Mumbai, India &bull; Last active 2 hours ago</p></div>
                     </div>
                     <button onclick="window.location.href='404.html'" class="btn" style="background: transparent; color: var(--dash-text); border: 1px solid var(--dash-border); padding: 6px 12px; border-radius: 4px; cursor: pointer;">Revoke</button>
                 </div>
@@ -584,8 +584,8 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const savedEmail = localStorage.getItem('finora_user_email');
-        const savedName = localStorage.getItem('finora_user_name');
+        const savedEmail = localStorage.getItem('stackly_user_email');
+        const savedName = localStorage.getItem('stackly_user_name');
         
         if(savedEmail && savedName) {
             const firstName = savedName.split(' ')[0] + '!';

@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 let formattedName = namePart.split(/[._-]/).map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
                 
                 // Save to localStorage
-                localStorage.setItem('finora_user_email', email);
-                localStorage.setItem('finora_user_name', formattedName);
+                localStorage.setItem('stackly_user_email', email);
+                localStorage.setItem('stackly_user_name', formattedName);
                 
                 // Redirect based on selected role
 
