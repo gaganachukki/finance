@@ -3,7 +3,7 @@
    ===================================================== */
 /* index hero */
 body.page-index .hero {
-    background-image: linear-gradient(to right, rgba(255,255,255,0.6), rgba(255,255,255,0.2)), url('../assets/hero_home.webp') !important;
+    background-image: linear-gradient(to right, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.4)), url('../assets/hero_home.webp') !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
@@ -11,7 +11,7 @@ body.page-index .hero {
 
 /* about hero */
 body.page-about .about-hero {
-    background-image: linear-gradient(to right, rgba(255,255,255,0.6), rgba(255,255,255,0.2)), url('../assets/hero_about.webp') !important;
+    background-image: linear-gradient(to right, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.4)), url('../assets/hero_about.webp') !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
@@ -19,7 +19,7 @@ body.page-about .about-hero {
 
 /* services hero */
 body.page-services .services-hero {
-    background-image: linear-gradient(to right, rgba(255,255,255,0.6), rgba(255,255,255,0.2)), url('../assets/hero_services.webp') !important;
+    background-image: linear-gradient(to right, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.4)), url('../assets/hero_services.webp') !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
@@ -27,7 +27,7 @@ body.page-services .services-hero {
 
 /* blog hero */
 body.page-blog .blog-hero {
-    background-image: linear-gradient(to right, rgba(255,255,255,0.6), rgba(255,255,255,0.2)), url('../assets/hero_blog.webp') !important;
+    background-image: linear-gradient(to right, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.4)), url('../assets/hero_blog.webp') !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
@@ -35,7 +35,7 @@ body.page-blog .blog-hero {
 
 /* loans hero */
 body.page-loans .page-banner {
-    background-image: linear-gradient(to right, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.3)), url('../assets/hero_loans.webp') !important;
+    background-image: linear-gradient(to right, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.4)), url('../assets/hero_loans.webp') !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
@@ -43,8 +43,56 @@ body.page-loans .page-banner {
 
 /* contact hero */
 body.page-contact .page-banner {
-    background-image: linear-gradient(to right, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.3)), url('../assets/hero_contact.webp') !important;
+    background-image: linear-gradient(to right, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.4)), url('../assets/hero_contact.webp') !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
+}
+
+
+/* Fix for Hero Subtext Readability */
+.hero p,
+.about-hero p,
+.services-hero p,
+.blog-hero p,
+.page-banner p {
+    color: #FFFFFF !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    font-weight: 500;
+}
+
+/* Fix for Trust Badges Readability */
+.trust-badge strong,
+.trust-badge span {
+    color: #FFFFFF !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+/* Make H1 text white as well since backgrounds are now dark */
+.hero h1,
+.about-hero h1,
+.services-hero h1,
+.blog-hero h1,
+.page-banner h1 {
+    color: #FFFFFF !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+
+/* Fix for Outline Buttons on Dark Hero Backgrounds */
+.hero-actions .btn-outline,
+.page-banner .btn-outline,
+.about-hero .btn-outline,
+.services-hero .btn-outline,
+.blog-hero .btn-outline {
+    color: #FFFFFF !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+}
+.hero-actions .btn-outline:hover,
+.page-banner .btn-outline:hover,
+.about-hero .btn-outline:hover,
+.services-hero .btn-outline:hover,
+.blog-hero .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: #FFFFFF !important;
 }

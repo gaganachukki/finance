@@ -89,14 +89,14 @@
     border: 1px solid var(--border-color);
     border-radius: 999px;
     font-weight: 500;
-    color: var(--navy-dark);
+    color: #0F172A;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 .category-pill:hover, .category-pill.active {
-    background: var(--navy-dark);
+    background: #0F172A;
     color: white;
-    border-color: var(--navy-dark);
+    border-color: #0F172A;
 }
 
 /* Recent Articles Grid */
@@ -118,7 +118,7 @@
     border: 1px solid var(--border-color);
     border-radius: 20px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease;
 }
 .article-card:hover {
     transform: translateY(-8px);
@@ -218,7 +218,7 @@
     border-radius: 16px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.03);
     border: 1px solid var(--border-color);
-    transition: transform 0.3s ease;
+    
 }
 .popular-item:hover {
     transform: translateX(10px);
@@ -252,6 +252,11 @@
     .popular-number { font-size: 2rem; }
 }
 @media (max-width: 480px) {
-    .blog-hero h1 { font-size: 2.8rem; }
+    .blog-hero h1 { font-size: 2rem; word-wrap: break-word; }
+    .blog-hero { padding: 120px 0 60px; }
+    .featured-content h2 { font-size: 1.8rem; }
+    .newsletter-wrapper h2 { font-size: 1.8rem; word-wrap: break-word; }
+    .section-title { font-size: 1.8rem; }
+    .categories-wrapper { justify-content: flex-start; } /* Prevent left-crop on long pills */
     .featured-content { padding: 30px 20px; }
 }

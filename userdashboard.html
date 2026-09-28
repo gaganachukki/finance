@@ -100,7 +100,7 @@
         <section class="stats-grid">
             <div class="stat-card">
                 <div class="stat-header">
-                    <div class="stat-icon"></div>
+                    <div class="stat-icon" style="color: var(--dash-primary);"><i class="fa-solid fa-wallet"></i></div>
                     <h3>Total Balance</h3>
                 </div>
                 <h2>₹24,500</h2>
@@ -108,7 +108,7 @@
             </div>
             <div class="stat-card">
                 <div class="stat-header">
-                    <div class="stat-icon"></div>
+                    <div class="stat-icon" style="color: #F59E0B;"><i class="fa-solid fa-hand-holding-dollar"></i></div>
                     <h3>Active Loans</h3>
                 </div>
                 <h2>03</h2>
@@ -116,7 +116,7 @@
             </div>
             <div class="stat-card">
                 <div class="stat-header">
-                    <div class="stat-icon"></div>
+                    <div class="stat-icon" style="color: #3B82F6;"><i class="fa-solid fa-credit-card"></i></div>
                     <h3>Monthly Spend</h3>
                 </div>
                 <h2>₹5,320</h2>
@@ -124,7 +124,7 @@
             </div>
             <div class="stat-card">
                 <div class="stat-header">
-                    <div class="stat-icon"></div>
+                    <div class="stat-icon" style="color: #10B981;"><i class="fa-solid fa-gauge-high"></i></div>
                     <h3>Credit Score</h3>
                 </div>
                 <h2>780</h2>
@@ -282,7 +282,8 @@
             </div>
             
             <div class="chart-card" style="margin-bottom: 40px;">
-                <table style="width: 100%; text-align: left; border-collapse: collapse;">
+                  <div class="table-responsive-wrapper">
+                      <table style="width: 100%; text-align: left; border-collapse: collapse;">
                     <tr style="border-bottom: 1px solid var(--dash-border);"><th style="padding: 12px 0;">Date</th><th style="padding: 12px 0;">Description</th><th style="padding: 12px 0;">Category</th><th style="padding: 12px 0;">Amount</th><th style="padding: 12px 0;">Status</th></tr>
                     <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">24 Sep 2026</td><td>Amazon Purchase</td><td>Shopping</td><td class="trend-down">-₹4,500</td><td><span class="profile-badge" style="color:var(--dash-primary);border-color:var(--dash-primary)">Success</span></td></tr>
                     <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">22 Sep 2026</td><td>TechCorp Salary</td><td>Income</td><td class="trend-up">+₹85,000</td><td><span class="profile-badge" style="color:var(--dash-primary);border-color:var(--dash-primary)">Success</span></td></tr>
@@ -295,6 +296,7 @@
                     <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">05 Sep 2026</td><td>Home Loan EMI</td><td>Loans</td><td class="trend-down">-₹42,500</td><td><span class="profile-badge" style="color:var(--dash-primary);border-color:var(--dash-primary)">Success</span></td></tr>
                     <tr><td style="padding: 12px 0;">01 Sep 2026</td><td>Gym Membership</td><td>Health</td><td class="trend-down">-₹2,000</td><td><span class="profile-badge" style="color:var(--dash-primary);border-color:var(--dash-primary)">Success</span></td></tr>
                 </table>
+                  </div>
                 <div style="text-align: center; margin-top: 24px;">
                     <button onclick="window.location.href='404.html'" class="btn" style="background: transparent; color: var(--dash-text); border: 1px solid var(--dash-border); padding: 8px 16px; border-radius: 8px;">Load More Transactions</button>
                 </div>
@@ -325,12 +327,14 @@
 
             <h3 style="margin-bottom: 16px;">Tax Saving Investments</h3>
             <div class="chart-card" style="margin-bottom: 24px;">
-                <table style="width: 100%; text-align: left; border-collapse: collapse;">
+                  <div class="table-responsive-wrapper">
+                      <table style="width: 100%; text-align: left; border-collapse: collapse;">
                     <tr style="border-bottom: 1px solid var(--dash-border);"><th style="padding: 12px 0;">Investment Type</th><th style="padding: 12px 0;">Amount Invested</th><th style="padding: 12px 0;">Max Limit</th><th style="padding: 12px 0;">Action</th></tr>
                     <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">ELSS Mutual Funds</td><td>₹1,00,000</td><td>Part of 1.5L</td><td><a href="404.html" style="color: var(--dash-primary);">View Folio</a></td></tr>
                     <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 12px 0;">PPF (Public Provident Fund)</td><td>₹50,000</td><td>Part of 1.5L</td><td><a href="404.html" style="color: var(--dash-primary);">View Passbook</a></td></tr>
                     <tr><td style="padding: 12px 0;">Health Insurance (80D)</td><td>₹25,000</td><td>₹25,000</td><td><a href="404.html" style="color: var(--dash-primary);">Download Receipt</a></td></tr>
                 </table>
+                  </div>
             </div>
 
             <h3 style="margin-bottom: 16px;">Past Tax Returns</h3>

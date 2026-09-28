@@ -208,3 +208,72 @@
         width: 100px; /* slightly smaller logo on small screens */
     }
 }
+
+/* Fixes for Admin Dashboard Mobile Issues */
+@media (max-width: 768px) {
+    /* 1. Fix Charts Grid */
+    .charts-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* 2. Fix Header Flex Rows safely */
+    div[style*="justify-content: space-between"] {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 16px !important;
+    }
+    /* Only stack inner flex divs if they contain inputs/buttons (like User Management header) */
+    div[style*="justify-content: space-between"] > div[style*="display: flex"]:has(input, button) {
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+    div[style*="justify-content: space-between"] input[type="text"] {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    div[style*="justify-content: space-between"] .btn,
+    div[style*="justify-content: space-between"] .btn-export {
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
+    }
+    /* Ensure profile badges like 'Verified' are centered */
+    .profile-badge {
+        margin: 0 auto !important;
+        display: inline-block !important;
+    }
+
+    /* 3. Allow table wrapper to scroll */
+    .table-responsive-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .chart-card table {
+        width: 100% !important;
+        white-space: nowrap !important;
+        min-width: 600px;
+    }
+
+    /* 4. Fix flex layouts inside chart-cards (like Recently Archived) */
+    .chart-card div[style*="display: flex"] {
+        flex-wrap: wrap !important;
+        gap: 12px !important;
+    }
+    
+    /* 5. Fix profile card flex layout */
+    .chart-card[style*="gap: 40px"] {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 20px !important;
+    }
+
+    /* 6. Fix user dashboard hero card overflow */
+    .dash-hero-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}
+
