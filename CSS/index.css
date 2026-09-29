@@ -468,3 +468,22 @@ p { font-size: 1.1rem; color: #475569; line-height: 1.6; }
         transform: translateX(calc(-50% - 15px));
     }
 }
+
+
+/* Hero section specific button overrides */
+.hero-actions .btn-login {
+    background-color: var(--primary-color) !important;
+}
+.hero-actions .btn-login:hover {
+    background-color: #008756 !important;
+}
+.hero-actions .btn-watch {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border-radius: 999px;
+    padding: 12px 28px;
+}
+.hero-actions .btn-watch:hover {
+    background-color: #008756 !important;
+    color: white !important;
+}
